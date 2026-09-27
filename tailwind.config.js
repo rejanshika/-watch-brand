@@ -7,25 +7,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Bright, paper-white surfaces (mirrors ist1947.com)
-        ink: "#ffffff",        // page background
-        inkSoft: "#f7f6f3",    // warm off-white alternating band
-        inkCard: "#ffffff",    // card surface
-        black: "#111111",      // true dark — footer & dark blocks only
+        // Warm luxury paper surfaces (balanced light, never piercing stark white)
+        ink: "#faf8f5",        // warm luxury ivory page background
+        inkSoft: "#f2ede4",    // warm subtle champagne/oatmeal band
+        inkCard: "#ffffff",    // crisp card surface
+        black: "#111111",      // true dark — footer & dark accents only
 
-        concrete: "#f4f6f9",
-        paper: "#ffffff",
+        concrete: "#f0ebe1",
+        paper: "#faf8f5",
 
-        // Ink-on-paper text ramp
-        chalk: "#000000",      // primary text
-        chalkSoft: "#1c1c1c",
-        graphite: "#4a4a4a",   // body copy
-        slate: "#7a7a7a",      // captions / meta
+        // Crisp ink-on-paper text ramp
+        chalk: "#141414",      // primary text
+        chalkSoft: "#222222",
+        graphite: "#4d4a45",   // body copy
+        slate: "#78746c",      // captions / meta
 
-        // Brand accents — bright, drawn from the collections
+        // Brand accents — rich and authentic to collections
         accent: "#2c3d8f",     // Arka dial indigo (primary accent)
         accentSoft: "#4358bd",
         accentMuted: "#1d2a66",
+        gold: "#c59a3f",       // Warm Konark solar gold
+        goldLight: "#dfb863",
         arka: "#7c6ad8",       // Arka sunset lavender
         arkaWarm: "#c2643a",   // Konark copper
         vanya: "#1f7a52",      // Vanya wild green

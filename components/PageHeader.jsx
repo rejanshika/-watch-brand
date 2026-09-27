@@ -2,8 +2,8 @@ import Motif from "./Motif";
 
 export default function PageHeader({ eyebrow, title, intro, motif, artLabel }) {
   return (
-    <header className="relative overflow-hidden bg-ink text-chalk">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_75%_35%,#eef1f9,#ffffff_70%)]" />
+    <header className="relative overflow-hidden bg-ink text-chalk border-b border-black/10">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_75%_35%,#f1ece3,#faf8f5_75%)]" />
 
       <div
         className={`relative mx-auto max-w-edge px-6 pb-20 pt-36 sm:px-10 sm:pt-44 ${
@@ -22,16 +22,16 @@ export default function PageHeader({ eyebrow, title, intro, motif, artLabel }) {
 
         {motif && (
           <div className="floaty relative mx-auto aspect-square w-full max-w-[400px]">
-            {/* framed artwork card */}
-            <div className="elev absolute inset-0 overflow-hidden rounded-[2.5rem] border border-black/10 bg-[radial-gradient(circle_at_50%_45%,#eef2fa,#ffffff_80%)]">
+            {/* framed artwork card with warm luxury tone */}
+            <div className="elev absolute inset-0 overflow-hidden rounded-[2.5rem] border border-black/10 bg-gradient-to-b from-[#f7f4ed] to-[#ece5d8] shadow-sm">
               {/* glow */}
-              <div className="pointer-events-none absolute left-1/2 top-1/2 h-3/4 w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20 blur-3xl" />
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-3/4 w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-3xl" />
               <Motif
                 variant={motif}
                 className="absolute left-1/2 top-1/2 h-[86%] w-[86%] -translate-x-1/2 -translate-y-1/2 text-accent"
               />
               {artLabel && (
-                <span className="absolute bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.32em] text-accent font-semibold">
+                <span className="absolute bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.32em] text-accent font-semibold bg-white/80 px-3.5 py-1 rounded-full border border-black/10 shadow-sm">
                   {artLabel}
                 </span>
               )}

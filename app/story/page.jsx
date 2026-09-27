@@ -2,7 +2,7 @@ import PageHeader from "@/components/PageHeader";
 import Story from "@/components/Story";
 import StoryInfographics from "@/components/StoryInfographics";
 import Difference from "@/components/Difference";
-import Specs from "@/components/Specs";
+import Enquire from "@/components/Enquire";
 
 export const metadata = {
   title: "Our Story — IST 1947",
@@ -22,7 +22,7 @@ export default function StoryPage() {
       <Story />
       <StoryInfographics />
       <Difference />
-      <Specs />
+      <Enquire />
     </main>
   );
 }

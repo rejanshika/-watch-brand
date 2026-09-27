@@ -4,7 +4,8 @@ import { dirname } from "node:path";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Pin tracing to this project (a stray lockfile exists in the home dir).
+  devIndicators: false,
+  // Pin tracing to this project
   outputFileTracingRoot: dirname(fileURLToPath(import.meta.url)),
 };
 

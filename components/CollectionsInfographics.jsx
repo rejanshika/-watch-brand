@@ -7,200 +7,200 @@ export default function CollectionsInfographics() {
   const [selectedCollection, setSelectedCollection] = useState("all");
   const [depthMeters, setDepthMeters] = useState(50); // 0 to 100m for depth gauge
   const [activeBiome, setActiveBiome] = useState(0);
+  const [movementPhotoIdx, setMovementPhotoIdx] = useState(0);
+
+  // Full watch images (less close-up, showing full case, bezel, lugs and dial)
+  const movementPhotos = [
+    { name: "Arka · Golden Hour", src: "/images/golden-hour_1.jpg", label: "Arka · Golden Hour" },
+    { name: "Vanya · Ranthambore", src: "/images/ranthambore-bagh_1.jpg", label: "Vanya · Ranthambore" },
+    { name: "Vijay · 2026 Legacy", src: "/images/2026_1.jpg", label: "Vijay · 2026 Legacy" },
+  ];
 
   const movementComponents = [
     {
-      id: "rotor",
-      name: "Custom Ashoka-Chakra Rotor",
-      metric: "21,600 VPH",
-      subhead: "Bidirectional Self-Winding Weight",
-      desc: "Inspired by the 24-spoke wheel of time, the skeletonized oscillating weight winds the mainspring with the wearer's natural wrist movement, delivering effortless kinetic power.",
-      specs: [
-        { label: "Winding Direction", val: "Bidirectional Kinetic" },
-        { label: "Spoke Architecture", val: "24-Spoke Radial Wheel" },
-        { label: "Finish", val: "Cotes de Geneve & Sunray" },
-        { label: "Efficiency", val: "High-Inertia Heavy Alloy" },
-      ],
-      diagramHighlight: "outer-rotor",
-    },
-    {
       id: "balance",
       name: "Parashock Balance Wheel & Escapement",
-      metric: "3.0 Hz (21,600 A/h)",
-      subhead: "High-Frequency Regulating Organ",
-      desc: "The heartbeat of the watch. Oscillating at 6 beats per second, protected by proprietary Parashock shock-absorbing jewels to maintain chronometric stability through sudden impacts.",
+      metric: "21,600 VPH (3.0 Hz)",
+      subhead: "Oscillating Regulating Heartbeat",
+      desc: "The chronometric heartbeat of the timepiece. Oscillating at precisely 6 beats per second (3.0 Hz), cushioned by dual Parashock spring-mounted synthetic ruby bearings to withstand sudden shocks and physical impacts.",
       specs: [
-        { label: "Beat Frequency", val: "21,600 vibrations/hr" },
-        { label: "Shock Resistance", val: "Parashock Spring System" },
-        { label: "Hairspring", val: "Nivarox Anti-Magnetic Alloy" },
-        { label: "Rate Accuracy", val: "-20 to +40 sec / day" },
+        { label: "Beat Frequency", val: "21,600 vibrations / hr" },
+        { label: "Shock Protection", val: "Parashock Spring System" },
+        { label: "Hairspring Material", val: "Anti-Magnetic Nivarox" },
+        { label: "Chronometric Rate", val: "-20 to +40 sec / day" },
       ],
-      diagramHighlight: "balance-spring",
+      pin: { x: "46%", y: "48%", label: "Calibre 82S7 Heartbeat" },
+    },
+    {
+      id: "subseconds",
+      name: "24-Spoke Small Seconds Complication",
+      metric: "60-Sec Orbit",
+      subhead: "Decoupled Offset Dial Pulse",
+      desc: "Positioned at 4:30 on the dial, a laser-skeletonized 24-spoke wheel spins continuously, serving as a live visual heartbeat of Indian Standard Time.",
+      specs: [
+        { label: "Dial Placement", val: "4:30 Offset Position" },
+        { label: "Drive Mechanism", val: "Direct-Drive Pinion" },
+        { label: "Motion Profile", val: "Smooth 6-Tick Sweep / sec" },
+        { label: "Finishing", val: "Heat-Blued / Gold PVD" },
+      ],
+      pin: { x: "57%", y: "58%", label: "24-Spoke Small Seconds" },
     },
     {
       id: "power",
       name: "Mainspring Barrel Assembly",
-      metric: "42+ Hours",
-      subhead: "Extended Autonomous Power Reserve",
-      desc: "A high-tensile alloy spring coiled within a micro-toothed barrel stores energy steadily, delivering smooth, uninterrupted torque throughout its 42-hour reserve cycle.",
+      metric: "42+ Hours Reserve",
+      subhead: "Isochronal Power Reservoir",
+      desc: "A high-tensile Nivaflex elastic alloy spring coiled inside a micro-toothed gear barrel delivers steady torque across the entire 42-hour autonomous power cycle without loss of amplitude.",
       specs: [
-        { label: "Power Reserve", val: "42 Hours Continuous" },
-        { label: "Spring Material", val: "Nivaflex Elastic Alloy" },
+        { label: "Autonomous Reserve", val: "42 Hours Continuous" },
+        { label: "Spring Alloy", val: "Nivaflex Elastic Metal" },
         { label: "Torque Delivery", val: "Linear Isochronal Curve" },
-        { label: "Winding Options", val: "Automatic + Hand-Winding" },
+        { label: "Winding Modes", val: "Automatic + Hand-Winding" },
       ],
-      diagramHighlight: "barrel-gear",
+      pin: { x: "50%", y: "36%", label: "42-Hour Mainspring" },
     },
     {
       id: "jewels",
       name: "21 Synthetic Ruby Bearings",
-      metric: "21 Jewels",
+      metric: "21 Rubies",
       subhead: "Frictionless Pivot Architecture",
-      desc: "Precision-machined corundum sapphire jewel bearings positioned at every high-wear rotational axis ensure virtually frictionless gear rotation and decades of operational longevity.",
+      desc: "Synthetic corundum ruby bearings machined to 9 Mohs mineral hardness eliminate rotational friction at high-wear axle points, guaranteeing decades of mechanical accuracy.",
       specs: [
         { label: "Bearing Count", val: "21 Synthetic Rubies" },
-        { label: "Hardness", val: "9 on Mohs Mineral Scale" },
-        { label: "Lubrication", val: "Synthetic Swiss Moebius Oil" },
-        { label: "Friction Coeff.", val: "< 0.04 µ Dry Static" },
+        { label: "Mineral Hardness", val: "9 on Mohs Scale" },
+        { label: "Lubricant", val: "Swiss Moebius Synthetic Oil" },
+        { label: "Wear Resistance", val: "Zero Metal-on-Metal Friction" },
       ],
-      diagramHighlight: "jewel-pivots",
+      pin: { x: "50%", y: "48%", label: "21 Synthetic Rubies" },
     },
     {
-      id: "subseconds",
-      name: "Ashoka 24-Spoke Small Seconds",
-      metric: "60-Sec Orbit",
-      subhead: "Decoupled Offset Dial Complication",
-      desc: "Located precisely at the 4:30 position, this custom-toothed wheel spins in continuous harmony, serving as a live visual pulse of Indian Standard Time.",
+      id: "rotor",
+      name: "Custom Ashoka-Chakra Rotor",
+      metric: "Kinetic Auto-Wind",
+      subhead: "24-Spoke Radial Oscillating Weight",
+      desc: "Inspired by India's wheel of time, this skeletonized heavy-alloy oscillating weight rotates bidirectionally to wind the mainspring effortlessly with the wearer's natural wrist motion.",
       specs: [
-        { label: "Subdial Position", val: "4:30 Offset Layout" },
-        { label: "Gear Decoupling", val: "Direct-Drive Pinion" },
-        { label: "Sweep Motion", val: "Smooth 6-Tick Sweep/sec" },
-        { label: "Hand Finish", val: "Heat-Blued or Gold Plated" },
+        { label: "Winding Action", val: "Bidirectional Kinetic" },
+        { label: "Architecture", val: "24-Spoke National Chakra" },
+        { label: "Finishing", val: "Côtes de Genève & Sunray" },
+        { label: "Efficiency", val: "Heavy Tungsten Perimeter" },
       ],
-      diagramHighlight: "sub-dial",
+      pin: { x: "50%", y: "50%", label: "Kinetic Auto-Rotor" },
     },
   ];
 
   const dialLayers = [
     {
       level: "Layer 01",
-      name: "Domed Sapphire Crystal",
+      name: "Domed AR Sapphire Crystal",
       thickness: "2.10 mm",
-      hardness: "9 Mohs Hardness",
-      details: "Scratch-proof synthetic corundum dome coated with a double-sided internal anti-reflective blue hue for glare-free readability in direct sunlight.",
+      hardness: "9 Mohs (Diamond Hard)",
+      details: "Scratch-proof synthetic corundum dome treated with internal anti-reflective coating for glare-free readability in direct sunlight.",
       tag: "Optic Shield",
     },
     {
       level: "Layer 02",
-      name: "Devanagari Indices & Guilloché Base",
+      name: "Devanagari Sunray Guilloché",
       thickness: "0.65 mm",
-      hardness: "Precision Stamped",
-      details: "Multi-depth fluted sunray Guilloché texture radiating from the center, complemented by individually applied polished Bregnagari numerals.",
-      tag: "Horological Dial",
+      hardness: "Stamped & Fluted",
+      details: "Multi-depth radiating fluted Guilloché base paired with hand-applied polished Devanagari numerals catching multi-directional light.",
+      tag: "Artisan Dial",
     },
     {
       level: "Layer 03",
-      name: "Ashoka 24-Spoke Small Seconds Subdial",
+      name: "Ashoka 24-Spoke Small Seconds",
       thickness: "0.35 mm",
-      hardness: "Micro-Etched",
-      details: "Recessed circular grained chapter ring with a laser-cut 24-spoke wheel replicating India's national chakra in miniature horological scale.",
+      hardness: "Laser Skeletonized",
+      details: "Recessed circular grained chapter ring framing the rotating 24-spoke national chakra miniature seconds complication.",
       tag: "Complication Ring",
     },
     {
       level: "Layer 04",
       name: "316L Marine Stainless Steel Chassis",
-      thickness: "11.8 mm Total",
-      hardness: "High-Corrosion Grade",
-      details: "Satin-brushed case flanks paired with mirror-polished bevelled lugs and an exhibition caseback engraved with the individual numbered edition (#001–#100).",
-      tag: "Enclosure",
+      thickness: "11.8 mm",
+      hardness: "Medical / Marine Grade",
+      details: "Satin-brushed case flanks, mirror-polished bevelled lugs, and screw-down exhibition caseback revealing the rotor.",
+      tag: "Chassis Foundation",
     },
   ];
 
   const biomes = [
     {
-      name: "Ranthambore Bagh",
+      name: "Ranthambore Tiger Reserve",
       state: "Rajasthan",
-      terrain: "Dry Deciduous Ravines & Dhok Forests",
+      terrain: "Dry Deciduous Forest & Ancient Banyan Ravines",
+      elevation: "215m – 505m ASL",
+      dialDetail: "Sunburst copper Guilloché evoking the golden coat of the Royal Bengal Tiger.",
       fauna: "Royal Bengal Tiger (Panthera tigris)",
-      dialDetail: "Sun-dappled amber and deep black Guilloché evoking the tiger roaming ancient fortress ruins.",
-      color: "#f59e0b",
-      elevation: "350m Elevation",
     },
     {
-      name: "Gir Sinh",
+      name: "Gir National Park",
       state: "Gujarat",
-      terrain: "Dry Teak & Thorny Scrub Savanna",
+      terrain: "Teak Canopy, Scrubland & Rocky Hillocks",
+      elevation: "150m – 530m ASL",
+      dialDetail: "Deep desert tan dial with raw graining inspired by the Asiatic Lion's savannah domain.",
       fauna: "Asiatic Lion (Panthera leo persica)",
-      dialDetail: "Golden savannah grain textured dial with brushed warm champagne steel bezel accents.",
-      color: "#eab308",
-      elevation: "420m Elevation",
     },
     {
-      name: "Jawai Tendua",
+      name: "Jawai Leopard Hills",
       state: "Rajasthan",
-      terrain: "Prehistoric Granite Rock Formations",
+      terrain: "Granite Monoliths & Sandy Riverbeds",
+      elevation: "320m – 680m ASL",
+      dialDetail: "Granite slate textured dial mirroring the monolithic boulders of Jawai.",
       fauna: "Indian Leopard (Panthera pardus fusca)",
-      dialDetail: "Speckled mineral stone finishing echoing leopards basking on centuries-old granite monoliths.",
-      color: "#94a3b8",
-      elevation: "580m Elevation",
     },
     {
-      name: "Kaziranga Gorh",
+      name: "Kaziranga Wetland Sanctuary",
       state: "Assam",
       terrain: "Brahmaputra Floodplains & Elephant Grass",
+      elevation: "40m – 80m ASL",
+      dialDetail: "Deep forest emerald dial capturing the mist of the Brahmaputra wetlands.",
       fauna: "Great Indian One-Horned Rhinoceros",
-      dialDetail: "Deep wetlands olive-green enamel dial reflecting the misty marshes of the eastern valley.",
-      color: "#10b981",
-      elevation: "80m Elevation",
     },
   ];
 
   const collectionMatrix = [
     {
       name: "Arka",
-      theme: "Konark Sun Temple & Astronomical Time",
-      price: "₹9,999",
+      theme: "Solar Chronometry & Konark Temple",
       variants: "5 Editions",
-      dimensions: "40mm Case · 11.8mm Depth · 47mm Lug-to-Lug",
-      glass: "Domed Sapphire with Anti-Reflective Coating",
-      dialFinish: "Radial Sunburst Guilloché & Devanagari Hours",
-      waterproof: "5 ATM (50 Metres / 165 Feet)",
-      strap: "Full-Grain Italian Leather with Quick-Release",
-      movement: "Miyota 82S7 Automatic · 21 Jewels · 42h Reserve",
-      scarcity: "Limited Batch Production",
+      price: "₹9,999",
+      movement: "Miyota 82S7 Automatic",
+      waterproof: "5 ATM (50 Metres)",
+      dimensions: "40mm Ø · 11.8mm Depth",
+      dialFinish: "Sunray Guilloché & Devanagari",
+      strap: "Tuscan Leather · 20mm Lug",
+      scarcity: "Numbered General Release",
     },
     {
       name: "Vanya",
-      theme: "India's Wild Sanctuaries (Ranthambore, Gir, Jawai, Kaziranga)",
-      price: "₹9,999",
+      theme: "Wilderness Sanctuaries of India",
       variants: "4 Editions",
-      dimensions: "41mm Case · 12.0mm Depth · 48mm Lug-to-Lug",
-      glass: "Domed Sapphire with Anti-Reflective Coating",
-      dialFinish: "Textured Terrain Guilloché & Dual-Tone Markers",
-      waterproof: "10 ATM (100 Metres / 330 Feet)",
-      strap: "Reinforced Tactical Canvas & Saddle Leather Lining",
-      movement: "Miyota 82S7 Automatic · 21 Jewels · 42h Reserve",
-      scarcity: "Limited Batch Production",
+      price: "₹9,999",
+      movement: "Miyota 82S7 Automatic",
+      waterproof: "10 ATM (100 Metres)",
+      dimensions: "41mm Ø · 12.2mm Depth",
+      dialFinish: "Deciduous Terrain Grain",
+      strap: "Mil-Spec Canvas + Leather",
+      scarcity: "Numbered General Release",
     },
     {
       name: "Vijay",
-      theme: "Five Landmark Cricket Victories (1983, 2007, 2011, 2024, 2026)",
+      theme: "Five World Championship Cricket Triumphs",
+      variants: "5 Editions",
       price: "₹19,470",
-      variants: "5 Individually Numbered Editions",
-      dimensions: "42mm Case · 12.2mm Depth · 49mm Lug-to-Lug",
-      glass: "Domed Sapphire with Triple Anti-Reflective Coating",
-      dialFinish: "Carbon & Enamel Sunburst with Historic Jersey Tones",
-      waterproof: "10 ATM (100 Metres / 330 Feet)",
-      strap: "Custom Perforated Racing Leather & Solid Steel Deployant",
-      movement: "Miyota 82S7 Automatic · Gold-Plated Rotor · 42h Reserve",
-      scarcity: "Strictly Limited to 100 Pieces Worldwide",
+      movement: "Miyota 82S7 + Gold Rotor",
+      waterproof: "10 ATM (100 Metres)",
+      dimensions: "41mm Ø · 11.9mm Depth",
+      dialFinish: "Carbon Fibre & Jersey Enamel",
+      strap: "Bespoke Italian Deployant",
+      scarcity: "Strictly 100 Pieces Worldwide",
     },
   ];
 
   const currentComp = movementComponents[activeComponent];
   const currentBiome = biomes[activeBiome];
 
-  // Calculated depth metrics
   const barPressure = (1 + depthMeters / 10).toFixed(1);
   const depthRatingLabel =
     depthMeters <= 50
@@ -209,144 +209,79 @@ export default function CollectionsInfographics() {
 
   return (
     <section className="bg-ink text-chalk">
-      {/* ─── INFOGRAPHIC 01: MOVEMENT ARCHITECTURE & TELEMETRY ─── */}
+      {/* ─── INFOGRAPHIC 01: FULL TIMEPIECE & CALIBRE INSPECTION ─── */}
       <div className="border-t border-black/10 bg-inkSoft py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
-          <div className="max-w-3xl">
-            <span className="eyebrow text-accent">Interactive Calibre Anatomy</span>
-            <h2 className="display mt-3 text-4xl sm:text-5xl lg:text-6xl text-chalk">
+          <div className="max-w-3xl space-y-3">
+            <span className="eyebrow text-accent">Haute Horlogerie Architecture</span>
+            <h2 className="display text-4xl sm:text-5xl lg:text-6xl text-chalk">
               The Engineering of <span className="display-italic text-accent">IST Mechanicals</span>
             </h2>
-            <p className="mt-4 font-sans text-base leading-relaxed text-graphite">
-              Every IST 1947 timepiece is driven by a self-winding automatic calibre beating at 21,600 vibrations per hour. Explore the five foundational micro-engineering subsystems below.
+            <p className="font-sans text-base leading-relaxed text-graphite">
+              Every IST 1947 timepiece is driven by a self-winding automatic calibre beating at 21,600 vibrations per hour (3.0 Hz). Inspect the full timepiece architecture and components below.
             </p>
           </div>
 
-          {/* Interactive movement schematic container */}
+          {/* Full Watch Photographic Showcase with Interactive Telemetry Hotspots */}
           <div className="mt-14 grid gap-8 lg:grid-cols-12 lg:items-center">
-            {/* Left: Interactive Graphic & Technical Visualization */}
+            {/* Left: Full Watch Inspection Stage */}
             <div className="lg:col-span-6">
-              <div className="elev relative aspect-square w-full overflow-hidden rounded-3xl border border-black/10 bg-[radial-gradient(ellipse_at_50%_50%,#eff2f9,#ffffff_80%)] p-6 sm:p-8">
-                {/* SVG Horological Movement Vector Schematic */}
-                <div className="relative flex h-full w-full items-center justify-center">
-                  <svg viewBox="0 0 400 400" className="h-full w-full max-h-[380px] max-w-[380px]">
-                    <defs>
-                      <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#7c6ad8" />
-                        <stop offset="50%" stopColor="#2c3d8f" />
-                        <stop offset="100%" stopColor="#1d2a66" />
-                      </linearGradient>
-                      <radialGradient id="jewelGlow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="#ff4d4d" stopOpacity="1" />
-                        <stop offset="70%" stopColor="#c7153b" stopOpacity="0.8" />
-                        <stop offset="100%" stopColor="#66001a" stopOpacity="0.4" />
-                      </radialGradient>
-                    </defs>
-
-                    {/* Outer Case & Calibre Ring */}
-                    <circle cx="200" cy="200" r="185" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2" />
-                    <circle cx="200" cy="200" r="175" fill="none" stroke="#2c3d8f" strokeWidth="1" strokeDasharray="4 8" className="spin-slow" />
-
-                    {/* Main Baseplate Bridge Details */}
-                    <path
-                      d="M 60 200 C 60 120 120 60 200 60 C 260 60 310 95 330 145 L 250 200 L 220 280 Z"
-                      fill="rgba(255,255,255,0.03)"
-                      stroke="rgba(44,61,143,0.3)"
-                      strokeWidth="1.5"
-                    />
-
-                    {/* Mainspring Barrel Gear (Top Right) */}
-                    <g
-                      className={`transition-opacity duration-500 ${
-                        activeComponent === 2 ? "opacity-100" : "opacity-40"
+              <div className="elev relative aspect-square w-full overflow-hidden rounded-3xl border border-black/10 bg-white p-4 sm:p-6 shadow-sm">
+                {/* Photo Selector Switcher */}
+                <div className="absolute top-6 left-6 right-6 z-20 flex items-center justify-between rounded-xl border border-black/10 bg-white/90 p-1.5 backdrop-blur-md shadow-sm">
+                  {movementPhotos.map((p, idx) => (
+                    <button
+                      key={p.label}
+                      onClick={() => setMovementPhotoIdx(idx)}
+                      className={`flex-1 rounded-lg py-1.5 font-mono text-[11px] font-semibold transition-all ${
+                        movementPhotoIdx === idx
+                          ? "bg-accent text-white shadow-sm"
+                          : "text-graphite hover:text-chalk"
                       }`}
                     >
-                      <circle cx="270" cy="140" r="48" fill="#15120e" stroke="url(#goldGrad)" strokeWidth="2.5" />
-                      <circle cx="270" cy="140" r="38" fill="none" stroke="#2c3d8f" strokeWidth="1" strokeDasharray="3 3" />
-                      <circle cx="270" cy="140" r="10" fill="url(#goldGrad)" />
-                      <text x="270" y="144" fill="#0c0b0a" fontSize="8" fontWeight="bold" textAnchor="middle">42H</text>
-                    </g>
-
-                    {/* Balance Wheel & Hairspring (Bottom Left) */}
-                    <g
-                      className={`transition-opacity duration-500 ${
-                        activeComponent === 1 ? "opacity-100" : "opacity-40"
-                      }`}
-                    >
-                      <circle cx="130" cy="260" r="46" fill="none" stroke="#2c3d8f" strokeWidth="2.5" />
-                      <line x1="130" y1="214" x2="130" y2="306" stroke="#2c3d8f" strokeWidth="1.5" />
-                      <line x1="84" y1="260" x2="176" y2="260" stroke="#2c3d8f" strokeWidth="1.5" />
-                      <circle cx="130" cy="260" r="28" fill="none" stroke="#7c6ad8" strokeWidth="1" strokeDasharray="2 4" className="spin-sweep" />
-                      <circle cx="130" cy="260" r="14" fill="url(#jewelGlow)" stroke="#ff8585" strokeWidth="1" />
-                    </g>
-
-                    {/* 21 Synthetic Jewels Pivots */}
-                    <g
-                      className={`transition-opacity duration-500 ${
-                        activeComponent === 3 ? "opacity-100" : "opacity-40"
-                      }`}
-                    >
-                      <circle cx="200" cy="200" r="9" fill="url(#jewelGlow)" stroke="#ff9999" strokeWidth="1" />
-                      <circle cx="270" cy="140" r="6" fill="url(#jewelGlow)" />
-                      <circle cx="130" cy="260" r="7" fill="url(#jewelGlow)" />
-                      <circle cx="200" cy="290" r="6" fill="url(#jewelGlow)" />
-                      <circle cx="285" cy="245" r="5" fill="url(#jewelGlow)" />
-                      <circle cx="145" cy="140" r="5" fill="url(#jewelGlow)" />
-                      <circle cx="110" cy="185" r="5" fill="url(#jewelGlow)" />
-                    </g>
-
-                    {/* Ashoka 24-Spoke Small Seconds Wheel (Bottom Right ~ 4:30) */}
-                    <g
-                      className={`transition-opacity duration-500 ${
-                        activeComponent === 4 ? "opacity-100" : "opacity-40"
-                      }`}
-                    >
-                      <circle cx="270" cy="260" r="36" fill="rgba(14,26,45,0.6)" stroke="#3a6096" strokeWidth="1.5" />
-                      {[...Array(24)].map((_, i) => (
-                        <line
-                          key={i}
-                          x1="270"
-                          y1="260"
-                          x2={270 + 32 * Math.cos((i * 15 * Math.PI) / 180)}
-                          y2={260 + 32 * Math.sin((i * 15 * Math.PI) / 180)}
-                          stroke="#729cd6"
-                          strokeWidth={i % 3 === 0 ? "1.5" : "0.75"}
-                        />
-                      ))}
-                      <circle cx="270" cy="260" r="6" fill="url(#goldGrad)" />
-                    </g>
-
-                    {/* Ashoka Chakra Rotor (Semicircle Weight) */}
-                    <g
-                      className={`transition-opacity duration-500 ${
-                        activeComponent === 0 ? "opacity-100" : "opacity-45"
-                      }`}
-                    >
-                      <path
-                        d="M 60 200 A 140 140 0 0 1 340 200 L 200 200 Z"
-                        fill="rgba(44,61,143,0.18)"
-                        stroke="url(#goldGrad)"
-                        strokeWidth="2"
-                        className="spin-rev"
-                      />
-                      <circle cx="200" cy="200" r="22" fill="#14110d" stroke="url(#goldGrad)" strokeWidth="2" />
-                      <text x="200" y="196" fill="#2c3d8f" fontSize="7" fontWeight="bold" textAnchor="middle" letterSpacing="1">
-                        IST 1947
-                      </text>
-                      <text x="200" y="206" fill="#ffffff" fontSize="5.5" textAnchor="middle" letterSpacing="1">
-                        21 JEWELS
-                      </text>
-                    </g>
-                  </svg>
+                      {p.label.split("·")[0]}
+                    </button>
+                  ))}
                 </div>
 
-                {/* Live Telemetry Badge */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-black/10 bg-black/80 px-4 py-2.5 backdrop-blur-md">
-                  <div className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-emerald-400 radar-pulse" />
-                    <span className="font-mono text-xs text-white/70 uppercase tracking-wider">Calibre Miyota 82S7</span>
+                {/* Full Timepiece Photo — Clean full view, not excessively zoomed in */}
+                <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[#f9f7f2] flex items-center justify-center p-4">
+                  <img
+                    src={movementPhotos[movementPhotoIdx].src}
+                    alt={movementPhotos[movementPhotoIdx].name}
+                    className="h-full w-full object-contain transition-transform duration-700 hover:scale-105"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+
+                  {/* Interactive Hotspot Pin for Active Component */}
+                  <div
+                    className="absolute z-20 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                    style={{
+                      left: currentComp.pin.x,
+                      top: currentComp.pin.y,
+                    }}
+                  >
+                    <div className="relative flex items-center justify-center">
+                      <span className="absolute h-10 w-10 rounded-full bg-accent/40 animate-ping" />
+                      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent text-white shadow-lg border-2 border-white text-[10px] font-bold">
+                        ✓
+                      </span>
+                    </div>
+                    <div className="mt-2 whitespace-nowrap rounded-lg border border-black/10 bg-black/85 px-3 py-1 font-mono text-[10px] font-bold text-white shadow-lg backdrop-blur-md">
+                      {currentComp.pin.label}
+                    </div>
                   </div>
-                  <span className="font-mono text-xs font-semibold text-[#b9c8f2]">{currentComp.metric}</span>
+
+                  {/* Bottom Info Bar */}
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-black/10 bg-white/95 px-4 py-2.5 backdrop-blur-md shadow-sm">
+                    <div className="flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-accent radar-pulse" />
+                      <span className="mono text-xs text-chalk uppercase tracking-wider font-bold">
+                        {movementPhotos[movementPhotoIdx].label}
+                      </span>
+                    </div>
+                    <span className="mono text-xs font-bold text-accent">{currentComp.metric}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -358,27 +293,27 @@ export default function CollectionsInfographics() {
                   <button
                     key={comp.id}
                     onClick={() => setActiveComponent(idx)}
-                    className={`rounded-xl border p-3.5 text-left transition-all duration-300 ${
+                    className={`rounded-2xl border p-3.5 text-left transition-all duration-300 ${
                       activeComponent === idx
-                        ? "border-accent bg-accent/10 shadow-[0_0_20px_rgba(44,61,143,0.2)]"
-                        : "border-black/10 bg-inkSoft hover:border-black/15 hover:bg-black/[0.04]"
+                        ? "border-accent bg-white shadow-md"
+                        : "border-black/10 bg-white/60 hover:bg-white"
                     }`}
                   >
-                    <span className="mono block text-[10px] uppercase tracking-wider text-slate">0{idx + 1}</span>
+                    <span className="mono block text-[10px] uppercase tracking-wider text-slate font-semibold">0{idx + 1}</span>
                     <span className="mt-1 block font-sans text-xs font-semibold text-chalk line-clamp-1">{comp.name.split(" ")[0]}</span>
-                    <span className="mono mt-1 block text-[11px] text-accent">{comp.metric}</span>
+                    <span className="mono mt-1 block text-[11px] font-bold text-accent">{comp.metric}</span>
                   </button>
                 ))}
               </div>
 
               {/* Active Component Detail Card */}
-              <div className="elev rounded-2xl border border-black/10 bg-inkCard p-6 sm:p-8">
+              <div className="elev rounded-3xl border border-black/10 bg-white p-6 sm:p-8">
                 <div className="flex flex-wrap items-center justify-between gap-2 border-b border-black/10 pb-4">
                   <div>
                     <span className="eyebrow text-accent">{currentComp.subhead}</span>
                     <h3 className="display mt-1 text-2xl text-chalk sm:text-3xl">{currentComp.name}</h3>
                   </div>
-                  <span className="mono rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs text-accent">
+                  <span className="mono rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1 text-xs font-bold text-accent">
                     {currentComp.metric}
                   </span>
                 </div>
@@ -390,9 +325,9 @@ export default function CollectionsInfographics() {
                 {/* Subsystem Specifications Grid */}
                 <div className="mt-6 grid grid-cols-2 gap-3 border-t border-black/10 pt-4">
                   {currentComp.specs.map((spec) => (
-                    <div key={spec.label} className="rounded-lg bg-black/[0.03] p-3">
+                    <div key={spec.label} className="rounded-xl bg-inkSoft p-3 border border-black/5">
                       <span className="mono block text-[10px] uppercase tracking-wider text-slate">{spec.label}</span>
-                      <span className="mt-1 block font-sans text-xs font-semibold text-chalk">{spec.val}</span>
+                      <span className="mt-1 block font-sans text-xs font-bold text-chalk">{spec.val}</span>
                     </div>
                   ))}
                 </div>
@@ -402,25 +337,72 @@ export default function CollectionsInfographics() {
         </div>
       </div>
 
-      {/* ─── NEW INFOGRAPHIC: INTERACTIVE HYDROSTATIC DEPTH GAUGE (5 ATM vs 10 ATM) ─── */}
-      <div className="border-t border-black/10 bg-inkSoft py-24 sm:py-32">
+      {/* ─── INFOGRAPHIC 02: 4-LAYER ISOMETRIC DIAL ARCHITECTURE ─── */}
+      <div className="border-t border-black/10 bg-ink py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
-          <div className="max-w-3xl">
-            <span className="eyebrow text-accent">Hydrostatic Pressure Simulation</span>
-            <h2 className="display mt-2 text-4xl sm:text-5xl lg:text-6xl text-chalk">
-              Water Resistance & <span className="display-italic text-accent">Atmospheric Depth</span>
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="eyebrow text-accent">Optical Depth & Tolerance</span>
+            <h2 className="display text-4xl sm:text-5xl lg:text-6xl text-chalk">
+              Four-Layer <span className="display-italic text-accent">Dial Anatomy</span>
             </h2>
-            <p className="mt-3 font-sans text-base text-graphite">
-              Every IST 1947 case is hermetically sealed with synthetic O-ring gaskets and dry-chamber tested. Drag the depth slider to inspect pressure resistance.
+            <p className="font-sans text-base leading-relaxed text-graphite">
+              Every IST 1947 watch is assembled across four high-tolerance structural planes, from the 9 Mohs domed sapphire crystal to the marine-grade chassis.
             </p>
           </div>
 
-          <div className="mt-12 elev rounded-3xl border border-black/10 bg-inkCard p-8 sm:p-12">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {dialLayers.map((layer) => (
+              <div
+                key={layer.level}
+                className="elev rounded-3xl border border-black/10 bg-white p-7 flex flex-col justify-between shadow-sm transition-all duration-300 hover:-translate-y-1.5"
+              >
+                <div>
+                  <div className="flex items-center justify-between border-b border-black/10 pb-4">
+                    <span className="mono text-xs font-bold text-accent">{layer.level}</span>
+                    <span className="mono rounded-full border border-black/10 bg-inkSoft px-3 py-0.5 text-[10px] text-slate font-medium">
+                      {layer.tag}
+                    </span>
+                  </div>
+
+                  <h3 className="display mt-4 text-xl text-chalk font-semibold">{layer.name}</h3>
+                  <p className="mt-3 font-sans text-xs leading-relaxed text-graphite">{layer.details}</p>
+                </div>
+
+                <div className="mt-8 border-t border-black/10 pt-4 grid grid-cols-2 gap-2 text-center">
+                  <div className="rounded-xl bg-inkSoft p-2 border border-black/5">
+                    <span className="mono text-[9px] text-slate block uppercase">Thickness</span>
+                    <span className="mono text-xs font-bold text-chalk mt-0.5 block">{layer.thickness}</span>
+                  </div>
+                  <div className="rounded-xl bg-inkSoft p-2 border border-black/5">
+                    <span className="mono text-[9px] text-slate block uppercase">Hardness</span>
+                    <span className="mono text-xs font-bold text-accent mt-0.5 block">{layer.hardness.split(" ")[0]}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ─── INFOGRAPHIC 03: INTERACTIVE HYDROSTATIC DEPTH GAUGE (5 ATM vs 10 ATM) ─── */}
+      <div className="border-t border-black/10 bg-inkSoft py-24 sm:py-32">
+        <div className="mx-auto max-w-edge px-6 sm:px-10">
+          <div className="max-w-3xl space-y-3">
+            <span className="eyebrow text-accent">Hydrostatic Pressure Chamber</span>
+            <h2 className="display text-4xl sm:text-5xl lg:text-6xl text-chalk">
+              Water Resistance & <span className="display-italic text-accent">Atmospheric Depth</span>
+            </h2>
+            <p className="font-sans text-base leading-relaxed text-graphite">
+              Every IST 1947 case is hermetically sealed with synthetic O-ring gaskets and dry-chamber tested. Drag the depth slider to inspect simulated pressure resistance.
+            </p>
+          </div>
+
+          <div className="mt-12 elev rounded-3xl border border-black/10 bg-white p-8 sm:p-12 shadow-sm">
             {/* Slider Control */}
             <div className="space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="mono text-xs uppercase tracking-widest text-slate">Simulated Immersion Depth</span>
-                <span className="mono text-2xl font-bold text-accent">{depthMeters} Metres ({depthMeters * 3.3} Ft)</span>
+                <span className="mono text-xs uppercase tracking-widest text-slate font-semibold">Simulated Immersion Depth</span>
+                <span className="mono text-2xl font-bold text-accent">{depthMeters} Metres ({Math.round(depthMeters * 3.28)} Ft)</span>
               </div>
 
               <input
@@ -430,7 +412,7 @@ export default function CollectionsInfographics() {
                 step={5}
                 value={depthMeters}
                 onChange={(e) => setDepthMeters(Number(e.target.value))}
-                className="h-2.5 w-full cursor-pointer appearance-none rounded-full bg-black/10 accent-accent"
+                className="h-3 w-full cursor-pointer appearance-none rounded-full bg-inkSoft accent-accent"
               />
 
               <div className="flex justify-between text-[11px] font-mono text-slate pt-1">
@@ -443,19 +425,19 @@ export default function CollectionsInfographics() {
             {/* Depth Telemetry Metrics */}
             <div className="mt-10 grid gap-6 sm:grid-cols-3 border-t border-black/10 pt-8">
               <div className="rounded-2xl border border-black/5 bg-inkSoft p-5">
-                <span className="mono text-[10px] uppercase tracking-wider text-slate">Hydrostatic Pressure</span>
+                <span className="mono text-[10px] uppercase tracking-wider text-slate font-semibold">Hydrostatic Pressure</span>
                 <h4 className="mono mt-2 text-3xl font-bold text-chalk">{barPressure} Bar</h4>
                 <p className="mt-1 font-sans text-xs text-graphite">Total dynamic water load on sapphire crystal</p>
               </div>
 
               <div className="rounded-2xl border border-black/5 bg-inkSoft p-5">
-                <span className="mono text-[10px] uppercase tracking-wider text-slate">Gasket Integrity</span>
-                <h4 className="mono mt-2 text-3xl font-bold text-emerald-400">100% Sealed</h4>
+                <span className="mono text-[10px] uppercase tracking-wider text-slate font-semibold">Gasket Integrity</span>
+                <h4 className="mono mt-2 text-3xl font-bold text-emerald">100% Hermetic</h4>
                 <p className="mt-1 font-sans text-xs text-graphite">Dual synthetic nitrile rubber crown barrier</p>
               </div>
 
               <div className="rounded-2xl border border-black/5 bg-inkSoft p-5">
-                <span className="mono text-[10px] uppercase tracking-wider text-slate">Collection Rating</span>
+                <span className="mono text-[10px] uppercase tracking-wider text-slate font-semibold">Collection Rating</span>
                 <h4 className="display mt-2 text-2xl font-bold text-accent">
                   {depthMeters <= 50 ? "5 ATM Rated" : "10 ATM Rated"}
                 </h4>
@@ -465,22 +447,22 @@ export default function CollectionsInfographics() {
               </div>
             </div>
 
-            <div className="mt-8 rounded-xl border border-accent/20 bg-accent/[0.03] p-4 text-xs font-mono text-chalk">
+            <div className="mt-8 rounded-xl border border-accent/20 bg-accent/[0.04] p-4 text-xs font-mono text-chalk">
               <span className="text-accent font-semibold">Activity Guidance:</span> {depthRatingLabel}
             </div>
           </div>
         </div>
       </div>
 
-      {/* ─── NEW INFOGRAPHIC: VANYA BIOME ELEVATION & TOPOGRAPHY ─── */}
+      {/* ─── INFOGRAPHIC 04: VANYA BIOME ELEVATION & TOPOGRAPHY ─── */}
       <div className="border-t border-black/10 bg-ink py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="eyebrow text-accent">Vanya Geographical Inspiration</span>
-            <h2 className="display mt-2 text-4xl sm:text-5xl lg:text-6xl text-chalk">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="eyebrow text-accent">Vanya Geographical Provenance</span>
+            <h2 className="display text-4xl sm:text-5xl lg:text-6xl text-chalk">
               Wilderness Biomes & <span className="display-italic text-accent">Dial Textures</span>
             </h2>
-            <p className="mt-3 font-sans text-base text-graphite">
+            <p className="font-sans text-base leading-relaxed text-graphite">
               Every Vanya watch dial is sculpted with geometric terrain micro-patterns drawn directly from India’s greatest national sanctuaries.
             </p>
           </div>
@@ -494,15 +476,15 @@ export default function CollectionsInfographics() {
                   onClick={() => setActiveBiome(idx)}
                   className={`w-full rounded-2xl border p-5 text-left transition-all duration-300 ${
                     activeBiome === idx
-                      ? "border-accent bg-accent/10 shadow-[0_0_20px_rgba(44,61,143,0.2)]"
-                      : "border-black/10 bg-inkSoft hover:border-black/15"
+                      ? "border-accent bg-white shadow-md"
+                      : "border-black/10 bg-white/60 hover:bg-white"
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="mono text-xs uppercase tracking-wider text-accent">{b.state}</span>
+                    <span className="mono text-xs uppercase tracking-wider text-accent font-semibold">{b.state}</span>
                     <span className="mono text-[10px] text-slate">{b.elevation}</span>
                   </div>
-                  <h4 className="display mt-1 text-xl text-chalk">{b.name}</h4>
+                  <h4 className="display mt-1 text-xl text-chalk font-semibold">{b.name}</h4>
                   <p className="font-sans text-xs text-graphite mt-1">{b.fauna}</p>
                 </button>
               ))}
@@ -510,24 +492,24 @@ export default function CollectionsInfographics() {
 
             {/* Right: Detailed Biome Showcase */}
             <div className="lg:col-span-7">
-              <div className="elev rounded-3xl border border-black/10 bg-inkCard p-8 sm:p-10">
+              <div className="elev rounded-3xl border border-black/10 bg-white p-8 sm:p-10 shadow-sm">
                 <div className="flex items-center justify-between border-b border-black/10 pb-4">
-                  <span className="eyebrow text-accent">{currentBiome.state} Sanctuary</span>
-                  <span className="mono text-xs text-chalk font-semibold">{currentBiome.elevation}</span>
+                  <span className="eyebrow text-accent font-semibold">{currentBiome.state} Sanctuary</span>
+                  <span className="mono text-xs text-chalk font-bold">{currentBiome.elevation}</span>
                 </div>
 
-                <h3 className="display mt-4 text-3xl sm:text-4xl text-chalk">
+                <h3 className="display mt-4 text-3xl text-chalk">
                   {currentBiome.name}
                 </h3>
 
                 <div className="mt-6 space-y-4">
                   <div className="rounded-xl border border-black/5 bg-inkSoft p-4">
-                    <span className="mono text-[10px] uppercase tracking-wider text-slate block">Ecosystem & Habitat</span>
+                    <span className="mono text-[10px] uppercase tracking-wider text-slate font-semibold block">Ecosystem & Habitat</span>
                     <p className="font-sans text-sm font-semibold text-chalk mt-0.5">{currentBiome.terrain}</p>
                   </div>
 
                   <div className="rounded-xl border border-black/5 bg-inkSoft p-4">
-                    <span className="mono text-[10px] uppercase tracking-wider text-slate block">Protected Wildlife Species</span>
+                    <span className="mono text-[10px] uppercase tracking-wider text-slate font-semibold block">Protected Wildlife Species</span>
                     <p className="font-sans text-sm font-semibold text-accent mt-0.5">{currentBiome.fauna}</p>
                   </div>
 
@@ -542,7 +524,7 @@ export default function CollectionsInfographics() {
         </div>
       </div>
 
-      {/* ─── INFOGRAPHIC 04: COLLECTION COMPARATIVE MATRIX ─── */}
+      {/* ─── INFOGRAPHIC 05: COLLECTION COMPARATIVE MATRIX ─── */}
       <div className="border-t border-black/10 bg-inkSoft py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -559,8 +541,8 @@ export default function CollectionsInfographics() {
                   onClick={() => setSelectedCollection(tab)}
                   className={`rounded-full px-4 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors ${
                     selectedCollection === tab
-                      ? "bg-accent text-white font-semibold"
-                      : "border border-black/10 bg-inkSoft text-graphite hover:text-chalk"
+                      ? "bg-accent text-white font-semibold shadow-sm"
+                      : "border border-black/10 bg-white/70 text-graphite hover:text-chalk"
                   }`}
                 >
                   {tab === "all" ? "All Collections" : tab}
@@ -576,17 +558,13 @@ export default function CollectionsInfographics() {
               .map((col) => (
                 <div
                   key={col.name}
-                  className={`elev flex flex-col justify-between rounded-3xl border p-8 transition-all duration-300 ${
-                    col.name === "Vijay"
-                      ? "border-accent/40 bg-[radial-gradient(ellipse_at_top,#f1f3f9,#ffffff)]"
-                      : "border-black/10 bg-inkCard"
-                  }`}
+                  className={`elev flex flex-col justify-between rounded-3xl border border-black/10 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1`}
                 >
                   <div>
                     <div className="flex items-center justify-between border-b border-black/10 pb-4">
                       <div>
                         <span className="eyebrow text-accent">{col.variants}</span>
-                        <h3 className="display text-3xl text-chalk">{col.name}</h3>
+                        <h3 className="display text-3xl text-chalk font-semibold">{col.name}</h3>
                       </div>
                       <div className="text-right">
                         <span className="mono block text-xl font-bold text-accent">{col.price}</span>
@@ -600,23 +578,23 @@ export default function CollectionsInfographics() {
 
                     {/* Spec List */}
                     <div className="mt-6 space-y-3">
-                      <div className="rounded-xl bg-inkSoft p-3">
+                      <div className="rounded-xl bg-inkSoft p-3 border border-black/5">
                         <span className="mono block text-[10px] uppercase tracking-wider text-slate">Case Architecture</span>
                         <span className="mt-0.5 block font-sans text-xs font-semibold text-chalk">{col.dimensions}</span>
                       </div>
-                      <div className="rounded-xl bg-inkSoft p-3">
+                      <div className="rounded-xl bg-inkSoft p-3 border border-black/5">
                         <span className="mono block text-[10px] uppercase tracking-wider text-slate">Dial Artistry</span>
                         <span className="mt-0.5 block font-sans text-xs font-semibold text-chalk">{col.dialFinish}</span>
                       </div>
-                      <div className="rounded-xl bg-inkSoft p-3">
+                      <div className="rounded-xl bg-inkSoft p-3 border border-black/5">
                         <span className="mono block text-[10px] uppercase tracking-wider text-slate">Water Resistance</span>
                         <span className="mt-0.5 block font-sans text-xs font-semibold text-accent">{col.waterproof}</span>
                       </div>
-                      <div className="rounded-xl bg-inkSoft p-3">
+                      <div className="rounded-xl bg-inkSoft p-3 border border-black/5">
                         <span className="mono block text-[10px] uppercase tracking-wider text-slate">Horological Calibre</span>
                         <span className="mt-0.5 block font-sans text-xs font-semibold text-chalk">{col.movement}</span>
                       </div>
-                      <div className="rounded-xl bg-inkSoft p-3">
+                      <div className="rounded-xl bg-inkSoft p-3 border border-black/5">
                         <span className="mono block text-[10px] uppercase tracking-wider text-slate">Strap Execution</span>
                         <span className="mt-0.5 block font-sans text-xs font-semibold text-chalk">{col.strap}</span>
                       </div>

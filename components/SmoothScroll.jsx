@@ -9,8 +9,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 /**
- * High-performance Lenis Smooth Scroll configured with exponential easing
- * and RAF loop to ensure buttery 60-120fps scrolling with zero jank.
+ * Ultra-smooth Lenis Scroll synchronized directly with GSAP Ticker
+ * to deliver locked 60-120fps buttery smooth scrolling with zero stutter.
  */
 export default function SmoothScroll({ children }) {
   const lenisRef = useRef(null);
@@ -23,30 +23,30 @@ export default function SmoothScroll({ children }) {
     if (prefersReduced) return;
 
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.2,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.1,
       infinite: false,
     });
     lenisRef.current = lenis;
 
-    // Update ScrollTrigger on Lenis scroll
-    lenis.on("scroll", () => {
-      ScrollTrigger.update();
-    });
+    // Synchronize ScrollTrigger updates with Lenis scroll
+    lenis.on("scroll", ScrollTrigger.update);
 
-    let rafId;
-    function raf(time) {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
-    }
-    rafId = requestAnimationFrame(raf);
+    // Drive Lenis from the GSAP ticker so scroll and tweens share one RAF.
+    const updateTicker = (time) => {
+      lenis.raf(time * 1000);
+    };
+    gsap.ticker.add(updateTicker);
+    // Lag smoothing must be off: when a frame runs long it rewrites the delta
+    // Lenis integrates against, which reads as a stutter mid-scroll.
+    gsap.ticker.lagSmoothing(0);
 
-    // Smooth-scroll anchor links to their sections.
+    // Smooth-scroll anchor links to their sections
     const handleAnchor = (e) => {
       const link = e.target.closest('a[href^="#"]');
       if (!link) return;
@@ -55,28 +55,29 @@ export default function SmoothScroll({ children }) {
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      lenis.scrollTo(target, { offset: 0, duration: 1.2 });
+      lenis.scrollTo(target, { offset: 0, duration: 1.0 });
     };
     document.addEventListener("click", handleAnchor);
 
     return () => {
       document.removeEventListener("click", handleAnchor);
-      cancelAnimationFrame(rafId);
+      gsap.ticker.remove(updateTicker);
       lenis.destroy();
       lenisRef.current = null;
     };
   }, []);
 
-  // Reset scroll to top on route change
+  // Reset scroll to top on route change & refresh ScrollTrigger
   useEffect(() => {
     if (lenisRef.current) {
       lenisRef.current.scrollTo(0, { immediate: true });
     } else {
       window.scrollTo(0, 0);
     }
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       ScrollTrigger.refresh();
-    }, 100);
+    }, 120);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   return children;

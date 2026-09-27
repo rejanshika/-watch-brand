@@ -144,7 +144,7 @@ export default function OverlapScroll() {
               trigger: card,
               start: "top bottom",
               end: "top 25%",
-              scrub: true,
+              scrub: 0.5,
             },
           });
         }
@@ -180,10 +180,11 @@ export default function OverlapScroll() {
           >
             {/* The Overlapping Card Sheet */}
             <div
-              className={`overlap-inner overlap-card relative mx-auto flex min-h-[85vh] w-full max-w-edge flex-col justify-between rounded-t-[2.5rem] sm:rounded-t-[3.5rem] border-t border-black/15 bg-gradient-to-b ${card.bgGradient} p-6 sm:p-10 lg:p-14 shadow-2xl transition-transform duration-200`}
+              className={`overlap-inner overlap-card relative mx-auto flex min-h-[85vh] w-full max-w-edge flex-col justify-between rounded-t-[2.5rem] sm:rounded-t-[3.5rem] border-t border-black/15 bg-gradient-to-b ${card.bgGradient} p-6 sm:p-10 lg:p-14 shadow-2xl`}
               style={{
                 transform: "translate3d(0, 0, 0)",
                 backfaceVisibility: "hidden",
+                willChange: "transform, opacity",
               }}
             >
               {/* Top Bar of the Card */}

@@ -19,7 +19,7 @@ export default function Hero() {
         const split = SplitText.create(".hero-title", { type: "chars", aria: "auto" });
 
         const tl = gsap.timeline({ defaults: { ease: "power3.out" }, delay: 0.15 });
-        tl.from(".hero-watch", { scale: 1.14, opacity: 0, duration: 1.7, ease: "power2.out" })
+        tl.from(".hero-watch", { scale: 1.12, opacity: 0, duration: 1.7, ease: "power2.out" })
           .from(".hero-glow", { opacity: 0, duration: 1.6 }, 0)
           .from(".hero-eyebrow", { opacity: 0, y: 12, duration: 0.7 }, "-=1.3")
           .from(
@@ -78,9 +78,9 @@ export default function Hero() {
     <section
       id="top"
       ref={root}
-      className="relative flex h-[100svh] min-h-[660px] w-full items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#cfd0ee_0%,#e4d7ea_38%,#f6dfd0_68%,#fdf3e7_100%)]"
+      className="relative flex h-[100svh] min-h-[660px] w-full items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#c2c6e6_0%,#dac8df_32%,#f3ceb7_65%,#faeedd_100%)]"
     >
-      {/* the Arka sunset plate, full bleed and bright */}
+      {/* The Arka sunset plate with rich warm contrast (no blinding white washout) */}
       <div className="hero-parallax pointer-events-none absolute inset-0 scale-105">
         <img
           src={hero.image}
@@ -88,34 +88,39 @@ export default function Hero() {
           className="hero-watch absolute inset-0 h-full w-full object-cover"
         />
       </div>
-      {/* legibility scrims — light, so the page stays bright */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_44%,rgba(255,255,255,0.86),rgba(255,255,255,0.35)_55%,transparent_78%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/85 via-white/15 to-white/90" />
-      <div className="hero-glow pointer-events-none absolute left-1/2 top-[46%] h-[46vh] w-[70vh] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/50 blur-[130px]" />
 
-      {/* copy — single centered block */}
+      {/* Atmospheric subtle warm sunset scrims */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_44%,rgba(255,248,238,0.60),rgba(255,240,225,0.20)_55%,transparent_80%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#faf8f5]/60 via-transparent to-[#faf8f5]/80" />
+      <div className="hero-glow pointer-events-none absolute left-1/2 top-[46%] h-[46vh] w-[70vh] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-200/25 blur-[120px]" />
+
+      {/* copy — single centered block with deep warm contrast */}
       <div className="hero-copy relative z-10 flex flex-col items-center px-6 text-center">
-        <p className="hero-eyebrow eyebrow mb-5 text-accentMuted tracking-[0.28em]">
-          Advanced Horology · Made in India
-        </p>
+        <div className="hero-eyebrow mb-5 inline-flex items-center gap-2 rounded-full border border-[#2c3d8f]/25 bg-white/75 px-4 py-1.5 shadow-sm backdrop-blur-md">
+          <span className="h-2 w-2 rounded-full bg-[#2c3d8f] radar-pulse" />
+          <span className="mono text-xs uppercase tracking-[0.26em] font-semibold text-[#1d2a66]">
+            Advanced Horology · Made in India
+          </span>
+        </div>
+
         <h1
-          className="hero-title display text-[17vw] leading-none text-[#3d1f14] sm:text-[13vw] lg:text-[10vw]"
+          className="hero-title display text-[17vw] leading-none text-[#23150e] sm:text-[13vw] lg:text-[10vw]"
           style={{ perspective: "600px" }}
         >
           {hero.headline}
         </h1>
-        <p className="hero-tag mt-6 max-w-md font-sans text-base leading-relaxed text-[#5a3a2c] sm:text-lg">
+        <p className="hero-tag mt-6 max-w-md font-sans text-base leading-relaxed text-[#4d3224] sm:text-lg font-medium">
           {hero.tagline}
         </p>
       </div>
 
-      {/* scroll cue — anchored near the bottom */}
+      {/* scroll cue */}
       <a
         href="#experience"
         className="hero-scroll absolute bottom-24 left-1/2 z-10 -translate-x-1/2"
         aria-label="Scroll to explore"
       >
-        <span className="group flex h-12 w-12 items-center justify-center rounded-full border border-accent/50 bg-white/70 backdrop-blur-md transition-all hover:bg-accent hover:border-accent">
+        <span className="group flex h-12 w-12 items-center justify-center rounded-full border border-accent/40 bg-white/85 shadow-md backdrop-blur-md transition-all hover:bg-accent hover:border-accent">
           <span className="animate-bounce text-accent transition-colors group-hover:text-white">
             ↓
           </span>
@@ -124,13 +129,13 @@ export default function Hero() {
 
       {/* corner labels */}
       <div className="pointer-events-none absolute inset-x-0 bottom-6 z-10 flex justify-between px-6 sm:px-10">
-        <span className="hero-corner eyebrow rounded-full border border-black/10 bg-white/70 px-3.5 py-1.5 text-chalkSoft backdrop-blur-sm">
+        <span className="hero-corner eyebrow rounded-full border border-black/10 bg-white/85 px-4 py-1.5 text-chalkSoft shadow-sm backdrop-blur-md">
           {hero.corners[0]}
         </span>
-        <span className="hero-corner eyebrow hidden rounded-full border border-black/10 bg-white/70 px-3.5 py-1.5 text-chalkSoft backdrop-blur-sm sm:block">
+        <span className="hero-corner eyebrow hidden rounded-full border border-black/10 bg-white/85 px-4 py-1.5 text-chalkSoft shadow-sm backdrop-blur-md sm:block">
           {hero.corners[1]}
         </span>
-        <span className="hero-corner eyebrow rounded-full border border-black/10 bg-white/70 px-3.5 py-1.5 text-chalkSoft backdrop-blur-sm">
+        <span className="hero-corner eyebrow rounded-full border border-black/10 bg-white/85 px-4 py-1.5 text-chalkSoft shadow-sm backdrop-blur-md">
           {hero.corners[2]}
         </span>
       </div>

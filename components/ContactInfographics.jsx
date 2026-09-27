@@ -148,12 +148,12 @@ export default function ContactInfographics() {
       {/* ─── INFOGRAPHIC 01: PAN-INDIA INSURED TRANSIT ECOSYSTEM ─── */}
       <section className="border-t border-black/10 bg-inkSoft py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="eyebrow text-accent">Security & Logistics Protocol</span>
-            <h2 className="display mt-3 text-4xl sm:text-5xl lg:text-6xl text-chalk">
+            <h2 className="display text-4xl sm:text-5xl lg:text-6xl text-chalk">
               Nationwide <span className="display-italic text-accent">Insured Transit</span>
             </h2>
-            <p className="mt-4 font-sans text-base leading-relaxed text-graphite">
+            <p className="font-sans text-base leading-relaxed text-graphite">
               Every IST 1947 timepiece travels inside a tamper-evident, sealed security vault box with complete door-to-door insurance coverage across India.
             </p>
           </div>
@@ -163,10 +163,13 @@ export default function ContactInfographics() {
             {transitMetrics.map((m, idx) => (
               <div
                 key={m.label}
-                className="elev group rounded-2xl border border-black/10 bg-inkCard p-6 transition-all duration-300 hover:border-accent/40"
+                className="elev group rounded-3xl border border-black/10 bg-white p-6 transition-all duration-300 hover:border-accent/40 hover:-translate-y-1 shadow-sm"
               >
-                <span className="mono text-xs uppercase tracking-widest text-accent">0{idx + 1} · {m.label}</span>
-                <span className="display mt-4 block text-2xl sm:text-3xl text-chalk group-hover:text-accent transition-colors">
+                <div className="flex items-center justify-between">
+                  <span className="mono text-xs uppercase tracking-widest text-accent font-semibold">0{idx + 1} · {m.label}</span>
+                  <span className="h-2 w-2 rounded-full bg-accent" />
+                </div>
+                <span className="display mt-4 block text-2xl sm:text-3xl text-chalk group-hover:text-accent transition-colors font-bold">
                   {m.value}
                 </span>
                 <p className="mt-2 font-sans text-xs text-graphite">{m.sub}</p>
@@ -175,34 +178,35 @@ export default function ContactInfographics() {
           </div>
 
           {/* Visual Security & Unboxing Protocol Flow */}
-          <div className="mt-12 elev rounded-3xl border border-black/10 bg-inkCard p-8 sm:p-10">
+          <div className="mt-12 elev rounded-3xl border border-black/10 bg-white p-8 sm:p-10 shadow-sm">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center border-b border-black/10 pb-6">
               <div>
                 <span className="eyebrow text-accent">Tamper-Proof Unboxing Standard</span>
                 <h3 className="display mt-1 text-2xl sm:text-3xl text-chalk">Armored Packaging Architecture</h3>
               </div>
-              <span className="mono rounded-full border border-emerald-500/40 bg-emerald-500/10 px-4 py-1 text-xs text-emerald-400">
-                ● Active Security Protocol
+              <span className="mono inline-flex items-center gap-2 rounded-full border border-emerald/30 bg-emerald/10 px-4 py-1.5 text-xs text-emerald font-semibold">
+                <span className="h-2 w-2 rounded-full bg-emerald animate-pulse" />
+                Active Security Protocol
               </span>
             </div>
 
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
-              <div className="rounded-xl border border-black/5 bg-inkSoft p-5">
-                <span className="mono text-xs text-accent">Stage A</span>
+              <div className="rounded-2xl border border-black/5 bg-inkSoft p-5">
+                <span className="mono text-xs text-accent font-semibold">Stage A</span>
                 <h4 className="display mt-2 text-lg text-chalk">Hardened Outer Vault</h4>
                 <p className="mt-2 font-sans text-xs leading-relaxed text-graphite">
                   Reinforced impact-resistant container lined with moisture-barrier and shock-absorbing foam.
                 </p>
               </div>
-              <div className="rounded-xl border border-black/5 bg-inkSoft p-5">
-                <span className="mono text-xs text-accent">Stage B</span>
+              <div className="rounded-2xl border border-black/5 bg-inkSoft p-5">
+                <span className="mono text-xs text-accent font-semibold">Stage B</span>
                 <h4 className="display mt-2 text-lg text-chalk">Serialized Security Seal</h4>
                 <p className="mt-2 font-sans text-xs leading-relaxed text-graphite">
                   Holographic, tamper-evident tape that reveals void patterns if opened before client receipt.
                 </p>
               </div>
-              <div className="rounded-xl border border-black/5 bg-inkSoft p-5">
-                <span className="mono text-xs text-accent">Stage C</span>
+              <div className="rounded-2xl border border-black/5 bg-inkSoft p-5">
+                <span className="mono text-xs text-accent font-semibold">Stage C</span>
                 <h4 className="display mt-2 text-lg text-chalk">Presentation Velvet Box</h4>
                 <p className="mt-2 font-sans text-xs leading-relaxed text-graphite">
                   Hand-crafted presentation box with watch pillow, manual, microfiber cloth, and NFC warranty card.
@@ -216,13 +220,13 @@ export default function ContactInfographics() {
       {/* ─── INFOGRAPHIC 02: 2-YEAR DIGITAL WARRANTY LIFECYCLE ─── */}
       <section className="border-t border-black/10 bg-ink py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl space-y-2">
             <span className="eyebrow text-accent">Atelier Guarantee & Care</span>
-            <h2 className="display mt-3 text-4xl sm:text-5xl lg:text-6xl text-chalk">
+            <h2 className="display text-4xl sm:text-5xl lg:text-6xl text-chalk">
               2-Year Digital Warranty <br />
               <span className="display-italic text-accent">& Service Lifecycle</span>
             </h2>
-            <p className="mt-4 font-sans text-base leading-relaxed text-graphite">
+            <p className="font-sans text-base leading-relaxed text-graphite">
               Your investment is protected by a 24-month comprehensive mechanical guarantee, backed by lifetime archive provenance.
             </p>
           </div>
@@ -237,25 +241,25 @@ export default function ContactInfographics() {
                   onClick={() => setActiveLifecycleStep(idx)}
                   className={`w-full rounded-2xl border p-5 text-left transition-all duration-300 ${
                     activeLifecycleStep === idx
-                      ? "border-accent bg-accent/10 shadow-[0_0_20px_rgba(44,61,143,0.15)]"
-                      : "border-black/10 bg-inkSoft hover:border-black/15"
+                      ? "border-accent bg-white shadow-md"
+                      : "border-black/10 bg-white/60 hover:bg-white"
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="mono text-xs uppercase tracking-wider text-accent">{stage.num} · {stage.phase}</span>
+                    <span className="mono text-xs uppercase tracking-wider text-accent font-semibold">{stage.num} · {stage.phase}</span>
                     <span className="mono text-[10px] text-slate">{stage.timeframe.split("—")[0]}</span>
                   </div>
-                  <h4 className="display mt-2 text-lg text-chalk">{stage.title}</h4>
+                  <h4 className="display mt-2 text-lg text-chalk font-semibold">{stage.title}</h4>
                 </button>
               ))}
             </div>
 
             {/* Stage Deep Dive Showcase */}
             <div className="lg:col-span-7">
-              <div className="elev rounded-3xl border border-black/10 bg-inkCard p-8 sm:p-10">
+              <div className="elev rounded-3xl border border-black/10 bg-white p-8 sm:p-10 shadow-sm">
                 <div className="flex items-center justify-between border-b border-black/10 pb-4">
-                  <span className="eyebrow text-accent">{lifecycleStages[activeLifecycleStep].phase} Phase</span>
-                  <span className="mono text-xs font-semibold text-chalk">{lifecycleStages[activeLifecycleStep].timeframe}</span>
+                  <span className="eyebrow text-accent font-semibold">{lifecycleStages[activeLifecycleStep].phase} Phase</span>
+                  <span className="mono text-xs font-bold text-chalk">{lifecycleStages[activeLifecycleStep].timeframe}</span>
                 </div>
 
                 <h3 className="display mt-4 text-3xl text-chalk">
@@ -266,10 +270,10 @@ export default function ContactInfographics() {
                   {lifecycleStages[activeLifecycleStep].desc}
                 </p>
 
-                <div className="mt-6 space-y-2.5 border-t border-black/10 pt-4">
+                <div className="mt-6 space-y-3 border-t border-black/10 pt-4">
                   {lifecycleStages[activeLifecycleStep].points.map((pt, i) => (
                     <div key={i} className="flex items-center gap-3">
-                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/20 text-accent text-xs">✓</span>
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/20 text-accent font-bold text-xs">✓</span>
                       <span className="font-sans text-xs text-graphite">{pt}</span>
                     </div>
                   ))}
@@ -283,12 +287,12 @@ export default function ContactInfographics() {
       {/* ─── INFOGRAPHIC 03: CONCIERGE ALLOCATION WORKFLOW ─── */}
       <section className="border-t border-black/10 bg-inkSoft py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
-          <div className="text-center max-w-2xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
             <span className="eyebrow text-accent">Collector Experience</span>
-            <h2 className="display mt-3 text-4xl sm:text-5xl text-chalk">
+            <h2 className="display text-4xl sm:text-5xl text-chalk">
               Bespoke Allocation Flow
             </h2>
-            <p className="mt-3 font-sans text-sm text-graphite">
+            <p className="font-sans text-sm text-graphite">
               From your initial enquiry to unboxing your serialized timepiece.
             </p>
           </div>
@@ -297,7 +301,7 @@ export default function ContactInfographics() {
             {conciergeSteps.map((c) => (
               <div
                 key={c.step}
-                className="elev rounded-2xl border border-black/10 bg-inkCard p-6 flex flex-col justify-between"
+                className="elev rounded-2xl border border-black/10 bg-white p-6 flex flex-col justify-between shadow-sm"
               >
                 <div>
                   <span className="mono text-2xl font-bold text-accent">{c.step}</span>
@@ -337,8 +341,8 @@ export default function ContactInfographics() {
                   onClick={() => setActiveFaqCategory(tab.id)}
                   className={`rounded-full px-4 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors ${
                     activeFaqCategory === tab.id
-                      ? "bg-accent text-white font-semibold"
-                      : "border border-black/10 bg-inkSoft text-graphite hover:text-chalk"
+                      ? "bg-accent text-white font-semibold shadow-sm"
+                      : "border border-black/10 bg-white/70 text-graphite hover:text-chalk"
                   }`}
                 >
                   {tab.label}
@@ -352,7 +356,7 @@ export default function ContactInfographics() {
             {(faqs[activeFaqCategory] || []).map((item, idx) => (
               <div
                 key={idx}
-                className="elev rounded-2xl border border-black/10 bg-inkCard p-6 sm:p-8"
+                className="elev rounded-2xl border border-black/10 bg-white p-6 sm:p-8 shadow-sm"
               >
                 <div className="flex items-start gap-3">
                   <span className="mono text-xs font-bold text-accent">Q:</span>

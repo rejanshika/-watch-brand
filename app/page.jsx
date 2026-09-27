@@ -6,8 +6,6 @@ import Motion from "@/components/Motion";
 import Products from "@/components/Products";
 import WhoWeAre from "@/components/WhoWeAre";
 import CraftFilm from "@/components/CraftFilm";
-import Story from "@/components/Story";
-import Specs from "@/components/Specs";
 import Enquire from "@/components/Enquire";
 
 export default function Home() {
@@ -21,8 +19,6 @@ export default function Home() {
       <Products />
       <WhoWeAre />
       <CraftFilm />
-      <Story />
-      <Specs />
       <Enquire />
     </main>
   );

@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 export default function LiveISTBadge({ compact = false }) {
   const [time, setTime] = useState("");
   const [prahar, setPrahar] = useState({ name: "Dvitiya Prahar", phase: "Day" });
-  const [secondsAngle, setSecondsAngle] = useState(0);
 
   useEffect(() => {
     const updateTime = () => {
@@ -19,11 +18,6 @@ export default function LiveISTBadge({ compact = false }) {
       const seconds = String(istTime.getSeconds()).padStart(2, "0");
       const formatted = `${String(hours).padStart(2, "0")}:${minutes}:${seconds} IST`;
       setTime(formatted);
-
-      // Smooth small seconds rotation (6Hz mechanical sweep simulation)
-      const millis = istTime.getMilliseconds();
-      const secAngle = ((istTime.getSeconds() + millis / 1000) / 60) * 360;
-      setSecondsAngle(secAngle);
 
       // 8 Prahars of the day (each 3 hours starting at 6 AM)
       if (hours >= 6 && hours < 9) {
@@ -46,7 +40,8 @@ export default function LiveISTBadge({ compact = false }) {
     };
 
     updateTime();
-    const interval = setInterval(updateTime, 100);
+    // 1-second interval is ultra-performant and prevents unnecessary layout thrashing
+    const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -57,7 +52,7 @@ export default function LiveISTBadge({ compact = false }) {
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
         </span>
-        <span className="font-semibold text-accent">{time || "00:00:00 IST"}</span>
+        <span className="font-semibold text-accent">{time || "IST LIVE"}</span>
         <span className="hidden text-[9px] uppercase tracking-wider text-graphite sm:inline">
           UTC+5:30
         </span>
@@ -68,12 +63,11 @@ export default function LiveISTBadge({ compact = false }) {
   return (
     <div className="elev flex items-center justify-between gap-4 rounded-2xl border border-black/10 bg-inkSoft p-4">
       <div className="flex items-center gap-3">
-        {/* Animated Ashoka 24-Spoke Wheel Ticking */}
+        {/* Hardware-accelerated CSS animated Ashoka 24-Spoke Wheel */}
         <div className="relative flex h-9 w-9 items-center justify-center rounded-full border border-accent/30 bg-white">
           <svg
             viewBox="0 0 40 40"
-            className="h-7 w-7"
-            style={{ transform: `rotate(${secondsAngle}deg)` }}
+            className="h-7 w-7 spin-sweep"
           >
             <circle cx="20" cy="20" r="18" fill="none" stroke="rgba(44,61,143,0.25)" strokeWidth="1" />
             {[...Array(24)].map((_, i) => (
@@ -93,7 +87,7 @@ export default function LiveISTBadge({ compact = false }) {
 
         <div>
           <div className="flex items-center gap-2">
-            <span className="mono text-xs font-bold text-accent">{time || "00:00:00 IST"}</span>
+            <span className="mono text-xs font-bold text-accent">{time || "IST LIVE"}</span>
             <span className="rounded bg-accent/10 px-1.5 py-0.2 font-mono text-[9px] text-accent">
               82.5°E Mirzapur
             </span>
