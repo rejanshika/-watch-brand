@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IST 1947 | Watches Inspired by the Way India Lives Time</title>
+  <meta name="description" content="IST 1947 is an Indian luxury watch brand creating haute horlogerie timepieces inspired by Indian Standard Time, architectural sundials, wildlife sanctuaries, and historic cricketing triumphs.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo_dark.png">
+  <link rel="apple-touch-icon" href="assets/logo_dark.png">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ist1947.com/">
+  <meta property="og:title" content="IST 1947 — Time, Reimagined.">
+  <meta property="og:description" content="India Runs On Its Own Time. Discover the Arka, Vanya, and Vijay collections.">
+  <meta property="og:image" content="assets/images/after-hours_1.jpg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- Custom Cursor (Desktop Only) -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- =========================================================================
+       GLOBAL AMBIENT HEADER WITH OFFICIAL LOGO
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="header-container">
+      
+      <!-- Left: Official Logo & Live IST Time Synchronizer -->
+      <div class="header-brand">
+        <a href="#" class="brand-logo" title="IST 1947">
+          <img src="assets/logo_white.png" alt="IST 1947" class="logo-img logo-img-white">
+          <img src="assets/logo_dark.png" alt="IST 1947" class="logo-img logo-img-dark">
+        </a>
+        <div class="header-ist-clock" title="Live Indian Standard Time">
+          <span class="live-pulse"></span>
+          <span id="istLiveClock">--:--:-- IST · NEW DELHI</span>
+        </div>
+      </div>
+
+      <!-- Center: Navigation Links -->
+      <nav class="header-nav">
+        <a href="#collections" class="nav-item">Collections</a>
+        <a href="#watchwall" class="nav-item">Watches</a>
+        <a href="#details" class="nav-item">The Details</a>
+        <a href="#timeline" class="nav-item">Legacy Timeline</a>
+        <a href="#story" class="nav-item">Our Story</a>
+        <a href="#pillars" class="nav-item">The Difference</a>
+      </nav>
+
+      <!-- Right: Utility Suite -->
+      <div class="header-utility">
+        <button class="utility-btn sound-toggle-btn" id="soundToggleBtn" onclick="window.IST.audio.toggle()" title="Toggle Mechanical Escapement Sound">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span>Sound</span>
+        </button>
+
+        <button class="utility-btn" id="headerSearchBtn" title="Search Timepieces">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Search</span>
+        </button>
+
+        <button class="utility-btn" id="headerCartBtn" title="Shopping Bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Bag</span>
+          <span class="cart-count-badge" id="headerCartCount" style="display: none;">0</span>
+        </button>
+
+        <!-- Mobile Menu Trigger -->
+        <button class="mobile-menu-btn" id="mobileMenuToggle" title="Open Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Slide-out Drawer -->
+  <div class="cart-drawer" id="mobileNavDrawer" style="right: auto; left: 0; transform: translateX(-100%);">
+    <div class="cart-drawer-header">
+      <img src="assets/logo_dark.png" alt="IST 1947" style="height: 38px;">
+      <button class="close-drawer-btn" id="closeMobileNavBtn">&times;</button>
+    </div>
+    <div style="padding: 2.5rem 2rem; display: flex; flex-direction: column; gap: 1.75rem;">
+      <a href="#collections" class="mobile-nav-link" style="font-family: var(--font-display); font-size: 1.5rem;">The Collections</a>
+      <a href="#watchwall" class="mobile-nav-link" style="font-family: var(--font-display); font-size: 1.5rem;">All Watches</a>
+      <a href="#details" class="mobile-nav-link" style="font-family: var(--font-display); font-size: 1.5rem;">The Details</a>
+      <a href="#timeline" class="mobile-nav-link" style="font-family: var(--font-display); font-size: 1.5rem;">Legacy Timeline</a>
+      <a href="#story" class="mobile-nav-link" style="font-family: var(--font-display); font-size: 1.5rem;">Our Story</a>
+      <a href="#pillars" class="mobile-nav-link" style="font-family: var(--font-display); font-size: 1.5rem;">The IST Difference</a>
+      <div style="margin-top: 2rem; border-top: 1px solid var(--border-hairline); padding-top: 1.5rem;">
+        <p class="telemetry-tag">INDIAN STANDARD TIME</p>
+        <p style="font-family: var(--font-mono); font-size: 0.9rem; margin-top: 0.5rem;">UTC+5:30 · NEW DELHI</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SECTION 1: 3D INTERACTIVE HERO EXHIBITION
+       (Bespoke 3D Watch Vessel with Cursor Perspective, Live Mechanical Hands)
+       ========================================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="hero-stage-lighting"></div>
+    <div class="hero-grid-lines"></div>
+
+    <div class="hero-content">
+      
+      <!-- Left Column: Editorial Statement & CTAs -->
+      <div class="hero-text-column">
+        <div class="hero-meta-top">
+          <span class="editorial-tag vermilion">UTC+5:30</span>
+          <span>HAUTE HORLOGERIE D'INDE</span>
+        </div>
+
+        <h1 class="hero-headline">
+          India Runs On <em>Its Own Time.</em>
+        </h1>
+
+        <p class="hero-subheadline">
+          Watches serious in their making, open in spirit, and designed with India at the heart of everything.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#watchwall" class="btn-primary">Explore Watches</a>
+          <a href="#story" class="btn-secondary" style="color: #FFFFFF; border-color: rgba(255,255,255,0.25);">Discover IST 1947</a>
+        </div>
+
+        <div style="display: flex; gap: 2rem; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem;">
+          <div>
+            <span class="telemetry-tag" style="color: var(--accent-gold);">CALIBRE</span>
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #FFFFFF; margin-top: 2px;">Miyota Mechanical</p>
+          </div>
+          <div>
+            <span class="telemetry-tag" style="color: var(--accent-gold);">NUMERALS</span>
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #FFFFFF; margin-top: 2px;">Bregnagari Devanagari</p>
+          </div>
+          <div>
+            <span class="telemetry-tag" style="color: var(--accent-gold);">CASE</span>
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #FFFFFF; margin-top: 2px;">316L Surgical Steel</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive 3D Horological Sculpture Stage -->
+      <div class="hero-3d-showcase" id="hero3dStage">
+        
+        <!-- Background Astral Konark Orbit Ring -->
+        <div class="hero-astral-ring hero-astral-outer"></div>
+        <div class="hero-astral-ring hero-astral-inner"></div>
+        <div class="hero-sundial-rays"></div>
+
+        <!-- 3D Floating Watch Vessel -->
+        <div class="hero-watch-3d-card" id="heroWatchCard">
+          <div class="watch-floating-shadow"></div>
+          <img src="assets/images/after-hours_cutout.png" alt="IST 1947 Masterpiece" class="hero-watch-img-plate" id="heroWatchPlate">
+          <div class="hero-watch-glare" id="heroWatchGlare"></div>
+        </div>
+
+        <!-- Floating Telemetry Callout Beacons -->
+        <div class="floating-beacon beacon-top-left">
+          <span class="beacon-dot"></span>
+          <div class="beacon-label">
+            <strong>BREGNAGARI DIAL</strong>
+            <span>Devanagari Guilloché</span>
+          </div>
+        </div>
+
+        <div class="floating-beacon beacon-bottom-right">
+          <span class="beacon-dot"></span>
+          <div class="beacon-label">
+            <strong>AUTOMATIC MECHANICAL</strong>
+            <span>21-Jewel Calibre</span>
+          </div>
+        </div>
+
+        <!-- Piece Switcher Dock -->
+        <div class="hero-switcher-dock">
+          <button class="hero-switch-tab active" data-piece="after-hours" onclick="window.IST.setHeroWatch('after-hours')">
+            <span class="tab-idx">01</span>
+            <span class="tab-name">Arka Sundial</span>
+          </button>
+          <button class="hero-switch-tab" data-piece="ranthambore-bagh" onclick="window.IST.setHeroWatch('ranthambore-bagh')">
+            <span class="tab-idx">02</span>
+            <span class="tab-name">Vanya Field</span>
+          </button>
+          <button class="hero-switch-tab" data-piece="2026" onclick="window.IST.setHeroWatch('2026')">
+            <span class="tab-idx">03</span>
+            <span class="tab-name">Vijay Chrono</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Telemetry Status Bar -->
+    <div class="hero-telemetry-bar">
+      <div>COORDINATES: 28°36'N 77°12'E</div>
+      <div class="scroll-indicator" onclick="document.getElementById('manifesto').scrollIntoView({behavior: 'smooth'})">
+        <span>SCROLL TO ENTER EXHIBITION</span>
+        <div class="scroll-line"></div>
+      </div>
+      <div>LIMITED EDITIONS & CORE CALIBRES</div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 2: "TIME IS EXPERIENCED" (Editorial Manifesto)
+       ========================================================================= -->
+  <section class="manifesto-section" id="manifesto">
+    <canvas class="manifesto-canvas-bg" id="sundialCanvas"></canvas>
+
+    <div class="container">
+      <div class="manifesto-grid">
+        
+        <div>
+          <span class="section-label">Editorial Manifesto</span>
+          <h2 class="manifesto-display-quote">
+            "TIME ISN'T JUST MEASURED.
+            <span class="accent-line">IT'S EXPERIENCED."</span>
+          </h2>
+        </div>
+
+        <div class="manifesto-content-right">
+          <p class="manifesto-text">
+            For generations, watchmaking looked outwards — measuring Alpine altitudes, European racetracks, and Western regattas.
+          </p>
+          <p class="manifesto-text">
+            IST 1947 turns the lens inward. From the sacred stone sundials of the Konark Sun Temple to the patient silence before a tiger sighting in Ranthambore, and the electric floodlit nights of historic cricket World Cups: we craft timepieces for the way India lives, feels, and remembers time.
+          </p>
+
+          <div class="manifesto-horology-badge">
+            <span class="bregnagari-sample">१२</span>
+            <div class="bregnagari-desc">
+              <strong>BREGNAGARI NUMERALS</strong><br>
+              Classic Breguet proportions refined in Devanagari script.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 3: THE COLLECTIONS (Three Curated Pavilions)
+       ========================================================================= -->
+  <section class="collections-section" id="collections">
+    <div class="container">
+      
+      <div class="collections-header-block">
+        <span class="section-label">Curated Pavilions</span>
+        <h2 class="collections-title">The Three Collections</h2>
+        <p class="collections-subtitle">
+          Three distinct horological philosophies rooted in Indian architecture, raw landscapes, and sporting folklore.
+        </p>
+      </div>
+
+      <div class="collections-triptych">
+        
+        <!-- Pavilion 1: ARKA -->
+        <div class="collection-pavilion-card" onclick="window.IST.inspector.open('after-hours')">
+          <div class="pavilion-visual-wrap">
+            <span class="editorial-tag pavilion-theme-badge">Architectural & Dress</span>
+            <img src="assets/images/after-hours_1.jpg" alt="Arka Collection" class="pavilion-watch-img" loading="lazy">
+            <span class="pavilion-price-pill">₹9,999</span>
+          </div>
+          <div class="pavilion-body">
+            <div>
+              <h3 class="pavilion-name">ARKA</h3>
+              <p class="pavilion-descriptor">Light, Shadow & Stone Sundials</p>
+              <p class="pavilion-text">
+                Inspired by the Konark Sun Temple sundial geometry, interplay of light and shadow, and time carved in stone. Features sunray dials, bespoke Bregnagari numerals, and a rotating Konark Wheel small seconds hand.
+              </p>
+            </div>
+            <div class="pavilion-footer">
+              <span class="telemetry-tag">5 TIMEPIECES</span>
+              <span class="btn-link">Explore Arka &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pavilion 2: VANYA -->
+        <div class="collection-pavilion-card" onclick="window.IST.inspector.open('ranthambore-bagh')">
+          <div class="pavilion-visual-wrap" style="background-color: #E2E6E2;">
+            <span class="editorial-tag pavilion-theme-badge">Wilderness & Field</span>
+            <img src="assets/images/ranthambore-bagh_1.jpg" alt="Vanya Collection" class="pavilion-watch-img" loading="lazy">
+            <span class="pavilion-price-pill">₹9,999</span>
+          </div>
+          <div class="pavilion-body">
+            <div>
+              <h3 class="pavilion-name">VANYA</h3>
+              <p class="pavilion-descriptor">Untamed Indian Sanctuaries</p>
+              <p class="pavilion-text">
+                Field-ready adventure timepieces built for the silence before the sighting. Topographical dials with animal paw tracks (Tiger, Lion, Leopard, Rhino), regional numerals at 12, 100M water resistance, and tactical velcro straps.
+              </p>
+            </div>
+            <div class="pavilion-footer">
+              <span class="telemetry-tag">4 TIMEPIECES</span>
+              <span class="btn-link">Explore Vanya &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pavilion 3: VIJAY -->
+        <div class="collection-pavilion-card" onclick="window.IST.inspector.open('1983')">
+          <div class="pavilion-visual-wrap" style="background-color: #E6E8EB;">
+            <span class="editorial-tag vermilion pavilion-theme-badge">Limited Edition (100 Pcs)</span>
+            <img src="assets/images/1983_1.jpg" alt="Vijay Collection" class="pavilion-watch-img" loading="lazy">
+            <span class="pavilion-price-pill">₹19,470</span>
+          </div>
+          <div class="pavilion-body">
+            <div>
+              <h3 class="pavilion-name">VIJAY</h3>
+              <p class="pavilion-descriptor">Nights of Victory & Legacy</p>
+              <p class="pavilion-text">
+                A limited-edition automatic tribute commemorating landmark nights of Indian cricketing glory (1983, 2007, 2011, 2024, 2026). Powered by the Miyota 82S7 Automatic movement with a bat-and-ball small seconds disc and 24h AM/PM disc.
+              </p>
+            </div>
+            <div class="pavilion-footer">
+              <span class="telemetry-tag">5 LIMITED MODELS</span>
+              <span class="btn-link">Explore Vijay &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4: THE WATCH WALL (Horizontal Gallery & Showcase)
+       ========================================================================= -->
+  <section class="watchwall-section" id="watchwall">
+    <div class="container-wide">
+      
+      <div class="watchwall-top-bar">
+        <div>
+          <span class="section-label">The Watch Wall</span>
+          <h2 style="font-family: var(--font-display); font-size: var(--text-h1);">All Timepieces</h2>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+          <div class="watchwall-filters">
+            <button class="filter-tab active" data-filter="all">All (14)</button>
+            <button class="filter-tab" data-filter="arka">Arka (5)</button>
+            <button class="filter-tab" data-filter="vanya">Vanya (4)</button>
+            <button class="filter-tab" data-filter="vijay">Vijay (5)</button>
+          </div>
+
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="utility-btn" id="scrollWallLeft" style="border: 1px solid var(--border-light);" title="Scroll Left">&larr;</button>
+            <button class="utility-btn" id="scrollWallRight" style="border: 1px solid var(--border-light);" title="Scroll Right">&rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="watchwall-carousel-container">
+        <div class="watchwall-track" id="watchWallTrack">
+          <!-- Populated dynamically by scripts/app.js -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 5: "THE DETAILS MATTER" (Interactive Technical Anatomy)
+       ========================================================================= -->
+  <section class="anatomy-section" id="details">
+    <div class="container">
+      
+      <div class="anatomy-header">
+        <span class="section-label">Haute Horlogerie Standards</span>
+        <h2>The Details Matter.</h2>
+        <p>
+          Every IST 1947 timepiece is engineered with micron-level precision, surgical grade metals, and bespoke Indian horological signatures.
+        </p>
+      </div>
+
+      <div class="anatomy-stage">
+        
+        <!-- Left: Step Navigation Buttons -->
+        <div class="anatomy-nav-list">
+          <button class="anatomy-step-btn active" data-step="dial">
+            <span class="step-num">01</span>
+            <div class="step-info">
+              <h4>The Dial Architecture</h4>
+              <p>Bregnagari Devanagari numerals & sunray finish.</p>
+            </div>
+          </button>
+
+          <button class="anatomy-step-btn" data-step="crystal">
+            <span class="step-num">02</span>
+            <div class="step-info">
+              <h4>Sapphire Crystal</h4>
+              <p>Scratch-resistant with internal multi-layer AR coating.</p>
+            </div>
+          </button>
+
+          <button class="anatomy-step-btn" data-step="movement">
+            <span class="step-num">03</span>
+            <div class="step-info">
+              <h4>Calibre Engine</h4>
+              <p>Miyota 82S7 Automatic & 1L45 Quartz movements.</p>
+            </div>
+          </button>
+
+          <button class="anatomy-step-btn" data-step="case">
+            <span class="step-num">04</span>
+            <div class="step-info">
+              <h4>316L Surgical Case</h4>
+              <p>Polished chamfers, satin flanks & laser relief caseback.</p>
+            </div>
+          </button>
+
+          <button class="anatomy-step-btn" data-step="strap">
+            <span class="step-num">05</span>
+            <div class="step-info">
+              <h4>Handcrafted Straps</h4>
+              <p>Italian alligator calf leather & tactical ballistic nylon.</p>
+            </div>
+          </button>
+        </div>
+
+        <!-- Center: Dynamic Watch Visual Stage -->
+        <div class="anatomy-viewport">
+          <img src="assets/images/after-hours_1.jpg" alt="Technical Anatomy" id="anatomyVisual">
+        </div>
+
+        <!-- Right: Technical Specification Card -->
+        <div class="anatomy-spec-card">
+          <span class="telemetry-tag" style="color: var(--accent-gold);">ENGINEERING TOLERANCES</span>
+          <h3 class="spec-heading" id="anatomyHeading">01 — The Dial Architecture</h3>
+          <p class="spec-body" id="anatomyBody">
+            Each dial is precision-milled with light-catching radial sunray brushing. Bespoke Bregnagari numerals combine classical Breguet proportions with Devanagari script, creating an unmistakably authentic Indian horological signature.
+          </p>
+
+          <div class="spec-metrics" id="anatomyMetrics">
+            <div class="metric-item">
+              <span class="metric-label">Numerals</span>
+              <span class="metric-value">Bregnagari Devanagari</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Small Seconds</span>
+              <span class="metric-value">Konark Wheel Disc</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Luminescence</span>
+              <span class="metric-value">Japanese Super-LumiNova</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Dial Finish</span>
+              <span class="metric-value">Sunray Brushed</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 6: INDIA — "The India We Know, Made Worth Keeping"
+       ========================================================================= -->
+  <section class="india-essay-section">
+    <div class="container">
+      
+      <div class="india-essay-grid">
+        
+        <div class="essay-visual-mosaic">
+          <div class="mosaic-item tall">
+            <img src="assets/images/cloud-nine_1.jpg" alt="Indian Time" loading="lazy">
+            <span class="mosaic-caption">MORNING LIGHT · 06:00 IST</span>
+          </div>
+          <div class="mosaic-item">
+            <img src="assets/images/golden-hour_1.jpg" alt="Golden Hour" loading="lazy">
+            <span class="mosaic-caption">KONARK SUNDIAL · 17:30 IST</span>
+          </div>
+          <div class="mosaic-item">
+            <img src="assets/images/ranthambore-bagh_2.jpg" alt="Ranthambore Sanctuary" loading="lazy">
+            <span class="mosaic-caption">SILENCE BEFORE SIGHTING</span>
+          </div>
+        </div>
+
+        <div class="essay-text-side">
+          <span class="section-label">Cultural Context</span>
+          <h2 class="essay-headline">"The India we know, made worth keeping."</h2>
+          
+          <p class="essay-body-lead">
+            Indian time has never been purely mechanical. It is emotional, elastic, chaotic, precise, sacred, and unmistakably ours.
+          </p>
+          <p>
+            It is the afternoon tea in a monsoon deluge, the collective breath held as the bowler runs in under floodlights, and the quiet dignity of ancient stone sundials that measured cosmic time centuries before modern horology was born.
+          </p>
+
+          <div class="essay-pillars-list">
+            <div class="essay-pillar-bullet">
+              <span class="bullet-dot"></span>
+              <span>Rooted in Indian Architectural & Sundial Heritage</span>
+            </div>
+            <div class="essay-pillar-bullet">
+              <span class="bullet-dot"></span>
+              <span>Bespoke Bregnagari Devanagari Typographic Identity</span>
+            </div>
+            <div class="essay-pillar-bullet">
+              <span class="bullet-dot"></span>
+              <span>Serious in Making · Open in Spirit · Uniquely Numbered</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 7: THE IST DIFFERENCE (The 4 Pillars)
+       ========================================================================= -->
+  <section class="difference-section" id="pillars">
+    <div class="container">
+      
+      <div class="difference-header">
+        <span class="section-label">The 4 Pillars</span>
+        <h2 style="font-family: var(--font-display); font-size: var(--text-h1);">The IST Difference</h2>
+        <p style="font-size: var(--text-body-lg); color: var(--text-secondary);">
+          Our foundational commitments to craftsmanship, collectors, and transparency.
+        </p>
+      </div>
+
+      <div class="difference-grid">
+        
+        <div class="pillar-card">
+          <span class="pillar-top-num">01</span>
+          <div>
+            <h3 class="pillar-title">Inspired by India</h3>
+            <p class="pillar-text">
+              Every detail—from the Konark Wheel sub-seconds to the Devanagari Bregnagari numerals—is conceived with India at the heart of everything.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-top-num">02</span>
+          <div>
+            <h3 class="pillar-title">Individually Numbered</h3>
+            <p class="pillar-text">
+              Every timepiece bears a unique, laser-engraved serial number on its surgical steel caseback, making each watch uniquely yours.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-top-num">03</span>
+          <div>
+            <h3 class="pillar-title">2 Year Digital Warranty</h3>
+            <p class="pillar-text">
+              Seamless digital warranty activation linked directly to your order and serial number, backed by dedicated horological support.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-top-num">04</span>
+          <div>
+            <h3 class="pillar-title">Insured Nationwide Shipping</h3>
+            <p class="pillar-text">
+              Complimentary, 100% fully insured door-to-door transit across all pincodes in India with tamper-proof luxury packaging.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 8: VIJAY HISTORICAL TIMELINE (1947 — 2026)
+       ========================================================================= -->
+  <section class="timeline-section" id="timeline">
+    <div class="container">
+      
+      <div class="timeline-header">
+        <span class="section-label" style="color: var(--accent-gold);">Chronological Archive</span>
+        <h2>The Vijay Legacy Timeline</h2>
+        <p style="color: var(--text-light-muted); font-size: var(--text-body-lg);">
+          Interactive journey through landmark nights in Indian sporting destiny.
+        </p>
+      </div>
+
+      <!-- Scrubber Buttons -->
+      <div class="timeline-scrubber">
+        <button class="timeline-year-btn" data-year="1947">
+          <span class="year-label">1947</span>
+          <span class="venue-label">Birth of IST</span>
+        </button>
+        <button class="timeline-year-btn active" data-year="1983">
+          <span class="year-label">1983</span>
+          <span class="venue-label">Lord's</span>
+        </button>
+        <button class="timeline-year-btn" data-year="2007">
+          <span class="year-label">2007</span>
+          <span class="venue-label">Johannesburg</span>
+        </button>
+        <button class="timeline-year-btn" data-year="2011">
+          <span class="year-label">2011</span>
+          <span class="venue-label">Wankhede</span>
+        </button>
+        <button class="timeline-year-btn" data-year="2024">
+          <span class="year-label">2024</span>
+          <span class="venue-label">Bridgetown</span>
+        </button>
+        <button class="timeline-year-btn" data-year="2026">
+          <span class="year-label">2026</span>
+          <span class="venue-label">Defending Dynasty</span>
+        </button>
+      </div>
+
+      <!-- Stage Card -->
+      <div class="timeline-stage-card">
+        <div class="timeline-visual-side">
+          <img src="assets/images/1983_1.jpg" alt="Vijay Timeline Watch" id="timelineImg">
+        </div>
+
+        <div class="timeline-text-side">
+          <span class="timeline-era-tag" id="timelineEraTag">LORD'S CRICKET GROUND, LONDON · THE UNDERDOG TRIUMPH</span>
+          <h3 class="timeline-era-title" id="timelineTitle">The Miracle of 1983</h3>
+          <p class="timeline-era-desc" id="timelineDesc">
+            Defending just 183 against the mighty two-time world champion West Indies. Kapil Dev running backwards for Viv Richards. The night belief ignited a billion dreams and transformed cricket into India’s national heartbeat.
+          </p>
+
+          <div class="timeline-specs-row">
+            <div>
+              <p class="telemetry-tag" style="color: var(--accent-gold);">COMMEMORATIVE MODEL</p>
+              <h5 style="font-family: var(--font-display); font-size: 1.4rem; color: #FFFFFF;" id="timelineWatchTitle">Vijay: 1983 Limited Edition</h5>
+              <p style="font-size: var(--text-xs); color: var(--text-light-muted); margin-top: 2px;" id="timelineWatchSpecs">43mm Automatic · Bat-and-Ball Small Seconds · White Victory Strap</p>
+            </div>
+            <div>
+              <button class="btn-secondary" id="timelineInspectBtn" style="color: #FFFFFF; border-color: rgba(255,255,255,0.25); padding: 0.75rem 1.5rem;">Inspect Watch</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 9: OUR STORY (01.09.1947 & Founder Story)
+       ========================================================================= -->
+  <section class="story-section" id="story">
+    <div class="container">
+      
+      <div class="story-container">
+        
+        <div class="story-date-hero">
+          <span class="section-label">Foundational Heritage</span>
+          <h2>01.09.1947</h2>
+          <p>THE DAY INDIA ESTABLISHED ITS OWN TIME</p>
+        </div>
+
+        <div class="story-prose-body">
+          <p class="lead">
+            “On September 1, 1947, independent India set its clocks to UTC+5:30. It was a statement of sovereignty — that from that day forward, this nation would run on its own time.”
+          </p>
+
+          <p>
+            Most luxury watches in the world were born from foreign climates, European yacht clubs, or mountain summits. But the time of Indian daily life is different. It is emotional, elastic, chaotic, precise, funny, sacred, and unmistakably ours. It is the ‘bas paanch minute’, the endless wedding celebrations, the golden hour over red sandstone fortresses, and the breathless tension of a final over.
+          </p>
+
+          <p>
+            IST 1947 was founded to turn these lived Indian experiences into modern, serious mechanical and quartz timepieces. We take our horology seriously: 316L stainless steel, anti-reflective sapphire crystal, automatic calibres with open-heart balance wheels, and custom Bregnagari numerals that honour Indian typography.
+          </p>
+
+          <div class="story-founder-signoff">
+            <div class="founder-info">
+              <h5>Karan Vaidya</h5>
+              <p>Founder, IST 1947 · KNV Ventures Pvt Ltd</p>
+            </div>
+            <div style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; color: var(--accent-vermilion);">
+              “Serious in making. Open in spirit.”
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 10: FINAL FLAGSHIP CTA CODA WITH OFFICIAL LOGO
+       ========================================================================= -->
+  <section class="final-coda-section">
+    <div class="container">
+      <div class="final-coda-content">
+        <img src="assets/logo_dark.png" alt="IST 1947" class="coda-logo-img">
+        <h2 class="coda-headline">
+          INDIA RUNS ON ITS OWN TIME.
+        </h2>
+        <a href="#watchwall" class="btn-primary" style="padding: 1.25rem 3.2rem;">Explore the Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FLAGSHIP FOOTER WITH OFFICIAL LOGO
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Col 1: Brand Lore & Official Logo -->
+        <div class="footer-brand-col">
+          <img src="assets/logo_white.png" alt="IST 1947" class="footer-logo-img">
+          <p class="footer-brand-desc">
+            Watches inspired by the way India lives time. Conceived, designed, and individually numbered.
+          </p>
+          <div class="telemetry-tag" style="color: var(--accent-gold); margin-top: 0.5rem;">
+            UTC+5:30 · INDIAN STANDARD TIME
+          </div>
+        </div>
+
+        <!-- Col 2: Collections -->
+        <div class="footer-nav-col">
+          <h5>Collections</h5>
+          <ul class="footer-links-list">
+            <li><a href="#collections" onclick="window.IST.inspector.open('after-hours')">Arka Dress Series</a></li>
+            <li><a href="#collections" onclick="window.IST.inspector.open('ranthambore-bagh')">Vanya Field Series</a></li>
+            <li><a href="#collections" onclick="window.IST.inspector.open('1983')">Vijay Victory Series</a></li>
+            <li><a href="#watchwall">All 14 Timepieces</a></li>
+            <li><a href="#timeline">Cricket Legacy Timeline</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Client Care & Manuals -->
+        <div class="footer-nav-col">
+          <h5>Client Care</h5>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" onclick="alert('User Manual: All IST 1947 timepieces come with an illustrated guide for time setting, water resistance guidelines, and strap changing.')">User Manual</a></li>
+            <li><a href="javascript:void(0)" onclick="alert('2 Year Digital Warranty: Every IST 1947 timepiece is registered automatically upon purchase with full coverage against mechanical manufacturing defects.')">Warranty Registration</a></li>
+            <li><a href="javascript:void(0)" onclick="alert('Shipping Policy: Free, fully insured door-to-door express transit across all pincodes in India.')">Shipping & Insurance</a></li>
+            <li><a href="javascript:void(0)" onclick="alert('Returns & Exchanges: 7-day hassle-free return/exchange policy on unworn watches with original tags and packaging.')">Returns & Refunds</a></li>
+            <li><a href="mailto:care@ist1947.com">care@ist1947.com</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div class="footer-newsletter-col">
+          <h5>Collector’s Journal</h5>
+          <p>
+            Receive private release announcements, limited numbered edition allocations, and horological essays.
+          </p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+            <button type="submit" class="btn-primary" style="padding: 0.75rem 1.25rem;">Join</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <p class="footer-legal-copy">
+          &copy; 2026 IST 1947 (KNV Ventures Pvt Ltd). All Rights Reserved.
+        </p>
+
+        <div class="footer-legal-links">
+          <a href="javascript:void(0)" onclick="alert('Privacy Policy: We value your privacy and never sell or share your personal information.')">Privacy Policy</a>
+          <a href="javascript:void(0)" onclick="alert('Terms of Service: All purchases subject to IST 1947 official terms.')">Terms of Service</a>
+          <a href="javascript:void(0)" onclick="alert('Indian Standard Time: Established 01.09.1947')">IST UTC+5:30</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       INTERACTIVE CART DRAWER
+       ========================================================================= -->
+  <div class="cart-drawer-backdrop" id="cartBackdrop"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3 style="font-family: var(--font-display);">Your Bag</h3>
+      <button class="close-drawer-btn" id="closeCartBtn">&times;</button>
+    </div>
+
+    <div class="cart-items-container" id="cartItemsList">
+      <!-- Injected via scripts/components.js -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-shipping-notice">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span>Complimentary Fully Insured Shipping across India</span>
+      </div>
+
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotalAmount">₹0</span>
+      </div>
+
+      <button class="btn-primary" id="cartCheckoutBtn" style="width: 100%;">Proceed to Insured Checkout</button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       WATCH INSPECTOR LOUPE & QUICK VIEW MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal-dialog">
+      <button class="close-drawer-btn modal-close-btn" id="modalCloseBtn">&times;</button>
+
+      <div class="modal-gallery-side">
+        <div class="modal-main-image-wrap" id="modalImgWrap">
+          <img src="assets/images/after-hours_1.jpg" alt="Watch Inspector" id="modalMainImg">
+        </div>
+        <div class="modal-thumbnails" id="modalThumbs">
+          <!-- Thumbnail buttons injected -->
+        </div>
+      </div>
+
+      <div class="modal-info-side">
+        <span class="modal-watch-collection" id="modalCollection">ARKA SERIES · INDIVIDUALLY NUMBERED</span>
+        <h2 class="modal-watch-title" id="modalTitle" style="font-family: var(--font-display);">After Hours</h2>
+        <div class="modal-watch-price" id="modalPrice">₹9,999</div>
+        
+        <p class="modal-watch-desc" id="modalDesc">
+          For the hours after the day is officially done, when the city slows but the night is still young. Deep navy sunray dial with warm ivory Bregnagari numerals and Konark Wheel small seconds.
+        </p>
+
+        <div class="modal-specs-table" id="modalSpecsList">
+          <!-- Populated dynamically -->
+        </div>
+
+        <button class="btn-primary" id="modalAddToCartBtn" style="margin-top: 1rem;">Add to Bag</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       INSTANT SEARCH MODAL
+       ========================================================================= -->
+  <div class="search-modal" id="searchModal">
+    <button class="close-drawer-btn" id="searchCloseBtn" style="position: absolute; top: 2rem; right: 2.5rem; font-size: 2rem;">&times;</button>
+    
+    <div class="search-modal-container">
+      <div class="search-input-wrap">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input-field" id="searchInput" placeholder="Search by watch or collection..." autocomplete="off">
+      </div>
+
+      <div class="search-results-grid" id="searchResultsGrid">
+        <!-- Results injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Scripts -->
+  <script type="module" src="scripts/products.js"></script>
+  <script type="module" src="scripts/components.js"></script>
+  <script type="module" src="scripts/app.js"></script>
+
+</body>
+</html>

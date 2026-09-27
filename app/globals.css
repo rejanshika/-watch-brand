@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: #07080b;
+  color: #ffffff;
+  font-family: var(--font-sans), "Outfit", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Lenis smooth scrolling */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+/* Typography Classes */
+.display {
+  font-family: var(--font-display), "Playfair Display", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+}
+
+.display-serif {
+  font-family: var(--font-display), "Playfair Display", Georgia, serif;
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.display-italic {
+  font-family: var(--font-display), "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.eyebrow {
+  font-family: var(--font-mono), "Space Grotesk", ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Technical mono for coordinates, calibres, numbers */
+.mono {
+  font-family: var(--font-mono), "Space Grotesk", ui-monospace, monospace;
+}
+
+/* Infinite marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 24s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Floating-in-air: gentle bob + deep soft shadow (levitation) */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.floaty {
+  animation: floaty 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.elev {
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8),
+    0 10px 24px -10px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.elev-gold {
+  box-shadow: 0 25px 50px -15px rgba(223, 177, 91, 0.2),
+    0 8px 20px -8px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(223, 177, 91, 0.3);
+}
+.elev-light {
+  box-shadow: 0 30px 60px -25px rgba(15, 23, 42, 0.15),
+    0 10px 20px -10px rgba(15, 23, 42, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+/* Stacking Overlap Card Shadows & Borders */
+.overlap-card {
+  box-shadow: 0 -20px 50px -10px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  will-change: transform, filter;
+}
+
+/* Slow rotations for decorative artwork */
+@keyframes spin360 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-slow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin360 120s linear infinite;
+}
+.spin-rev {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin360 90s linear infinite reverse;
+}
+.spin-sweep {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin360 8s linear infinite;
+}
+
+/* Pulsing radar dot */
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(223, 177, 91, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 14px rgba(223, 177, 91, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(223, 177, 91, 0);
+  }
+}
+.radar-pulse {
+  animation: radarPulse 2.4s infinite;
+}
+
+/* Shimmer gradient animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #dfb15b 0%,
+    #fef3c7 50%,
+    #dfb15b 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s infinite linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
