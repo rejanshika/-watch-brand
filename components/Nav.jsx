@@ -10,8 +10,21 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
+    let ticking = false;
+    const read = () => {
+      ticking = false;
+      // Only re-render on the actual boundary crossing, not on every event.
+      setScrolled((was) => {
+        const now = window.scrollY > 20;
+        return now === was ? was : now;
+      });
+    };
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(read);
+    };
+    read();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -27,9 +40,9 @@ export default function Nav() {
 
       <div className="relative mx-auto max-w-edge px-3 pt-3 sm:px-6 sm:pt-4">
         <nav
-          className={`flex items-center justify-between rounded-full border px-4 py-2.5 transition-all duration-300 sm:px-6 sm:py-3 ${
+          className={`flex items-center justify-between rounded-full border px-4 py-2.5 transition-[background-color,border-color,box-shadow] duration-300 sm:px-6 sm:py-3 ${
             scrolled
-              ? "border-black/10 bg-[#ffffff]/95 shadow-[0_10px_30px_-12px_rgba(17,17,17,0.18)] backdrop-blur-xl"
+              ? "border-black/10 bg-[#ffffff]/95 shadow-[0_10px_30px_-12px_rgba(17,17,17,0.18)]"
               : "border-black/10 bg-[#ffffff]/75 backdrop-blur-md"
           }`}
         >

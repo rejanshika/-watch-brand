@@ -23,13 +23,15 @@ export default function SmoothScroll({ children }) {
     if (prefersReduced) return;
 
     const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      // Frame-rate independent smoothing. `duration` easing restarts a timed
+      // tween per wheel event, which trails continuous input and reads as lag;
+      // lerp converges toward the target every frame and tracks the wheel.
+      lerp: 0.12,
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.1,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.5,
       infinite: false,
     });
     lenisRef.current = lenis;
