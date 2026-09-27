@@ -65,7 +65,7 @@ export default function Products() {
   return (
     <section ref={root} className="bg-ink text-chalk">
       <div className="mx-auto max-w-edge px-6 py-24 sm:px-10 md:py-32">
-        <div className="mb-14 flex flex-wrap items-end justify-between gap-4 border-b border-white/10 pb-6">
+        <div className="mb-14 flex flex-wrap items-end justify-between gap-4 border-b border-black/10 pb-6">
           <div>
             <span className="eyebrow text-accent">{products.eyebrow}</span>
             <h2 className="display mt-2 text-4xl sm:text-5xl lg:text-6xl text-chalk">
@@ -86,9 +86,9 @@ export default function Products() {
             <Link
               key={p.name}
               href="/collections"
-              className="prod-card elev group cursor-pointer rounded-3xl border border-white/10 bg-inkCard p-4 [transform-style:preserve-3d] transition-colors hover:border-accent/40"
+              className="prod-card elev group cursor-pointer rounded-3xl border border-black/10 bg-inkCard p-4 [transform-style:preserve-3d] transition-colors hover:border-accent/40"
             >
-              <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-black">
+              <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-inkSoft">
                 <img
                   src={p.image}
                   alt={p.name}
@@ -96,7 +96,7 @@ export default function Products() {
                   decoding="async"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
-                <span className="absolute right-3 top-3 rounded-full border border-white/10 bg-black/70 px-3 py-1 font-mono text-xs font-bold text-accent backdrop-blur-md">
+                <span className="absolute right-3 top-3 rounded-full border border-black/10 bg-black/70 px-3 py-1 font-mono text-xs font-bold text-white backdrop-blur-md">
                   {p.price}
                 </span>
               </div>
@@ -105,7 +105,7 @@ export default function Products() {
                   <h3 className="display text-xl text-chalk group-hover:text-accent transition-colors">{p.name}</h3>
                   <p className="font-mono text-xs uppercase tracking-[0.18em] text-slate mt-0.5">{p.collection} Edition</p>
                 </div>
-                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-accent transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-black">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-black/10 bg-inkSoft text-accent transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
                   →
                 </span>
               </div>

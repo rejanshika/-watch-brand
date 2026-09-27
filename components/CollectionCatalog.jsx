@@ -59,7 +59,7 @@ export default function CollectionCatalog() {
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    <span className="absolute bottom-3 left-3 rounded-full bg-black/70 px-2.5 py-0.5 font-mono text-[10px] text-chalk backdrop-blur-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span className="absolute bottom-3 left-3 rounded-full bg-black/70 px-2.5 py-0.5 font-mono text-[10px] text-white backdrop-blur-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       Automatic · {g.price}
                     </span>
                   </div>

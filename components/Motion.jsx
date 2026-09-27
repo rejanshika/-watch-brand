@@ -33,14 +33,14 @@ export default function Motion() {
   );
 
   return (
-    <section ref={root} className="relative overflow-hidden bg-black">
+    <section ref={root} className="relative overflow-hidden bg-ink">
       {/* soft gold glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[60vh] w-[60vh] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-[140px]" />
 
       <div className="relative mx-auto grid max-w-edge items-center gap-12 px-6 py-24 sm:px-10 md:py-32 lg:grid-cols-2 lg:gap-20">
         {/* video */}
         <div className="mo-media order-1 mx-auto w-full max-w-[380px] lg:order-1">
-          <div className="floaty elev overflow-hidden rounded-[2rem] border border-white/10">
+          <div className="floaty elev overflow-hidden rounded-[2rem] border border-black/10">
             <LazyVideo src="/showcase-splash.mp4" className="block h-auto w-full" />
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function Motion() {
               (p) => (
                 <li
                   key={p}
-                  className="flex items-center gap-2 border-t border-white/10 pt-3 text-sm text-chalk"
+                  className="flex items-center gap-2 border-t border-black/10 pt-3 text-sm text-chalk"
                 >
                   <span className="text-accent">—</span>
                   {p}

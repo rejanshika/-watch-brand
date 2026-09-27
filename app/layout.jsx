@@ -34,10 +34,18 @@ export const metadata = {
   title: "IST 1947 — Watches Inspired by the Way India Lives Time",
   description:
     "IST 1947 turns India's places, rituals, victories and everyday obsessions into watches. Explore Arka, Vanya and Vijay.",
+  icons: {
+    icon: [
+      { url: "/logo-white.png", href: "/logo-white.png" },
+      { url: "/icon.png", href: "/icon.png" }
+    ],
+    shortcut: "/logo-white.png",
+    apple: "/logo-white.png",
+  },
 };
 
 export const viewport = {
-  themeColor: "#050608",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
 };
@@ -48,7 +56,12 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${playfair.variable} ${outfit.variable} ${spaceGrotesk.variable}`}
     >
-      <body className="bg-ink text-chalk antialiased selection:bg-accent selection:text-black">
+      <head>
+        <link rel="icon" href="/logo-white.png" type="image/png" />
+        <link rel="shortcut icon" href="/logo-white.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo-white.png" />
+      </head>
+      <body className="bg-ink text-chalk antialiased selection:bg-accent selection:text-white">
         <ScrollProgress />
         <SmoothScroll>
           <Nav />

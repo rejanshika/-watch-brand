@@ -17,7 +17,7 @@ export default function ContactPage() {
   return (
     <main>
       <section className="relative overflow-hidden bg-ink text-chalk">
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-[radial-gradient(circle_at_70%_40%,rgba(212,175,55,0.14),transparent_60%)]" />
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-[radial-gradient(circle_at_70%_40%,rgba(44,61,143,0.10),transparent_60%)]" />
 
         <div className="relative mx-auto grid max-w-edge items-center gap-12 px-6 pb-20 pt-40 sm:px-10 sm:pt-48 lg:grid-cols-[1fr_0.85fr] lg:gap-20 lg:pl-16">
           {/* left — text with room */}
@@ -32,7 +32,7 @@ export default function ContactPage() {
             </p>
             <a
               href="#enquire"
-              className="mt-9 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-mono text-xs uppercase tracking-[0.18em] text-black transition-transform hover:scale-[1.04]"
+              className="mt-9 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-mono text-xs uppercase tracking-[0.18em] text-white transition-transform hover:scale-[1.04]"
             >
               Register interest <span>→</span>
             </a>
@@ -43,7 +43,7 @@ export default function ContactPage() {
             {cards.map((c) => (
               <div
                 key={c.label}
-                className="floaty elev rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm"
+                className="floaty elev rounded-2xl border border-black/10 bg-black/[0.03] p-6 backdrop-blur-sm"
               >
                 <p className="eyebrow text-slate">{c.label}</p>
                 {c.value && (

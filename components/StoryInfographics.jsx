@@ -70,7 +70,7 @@ export default function StoryInfographics() {
       venue: "Lord's Cricket Ground, London",
       opponent: "West Indies (183 vs 140)",
       headline: "The Night We First Learnt to Believe",
-      colors: ["#1B365D", "#FFFFFF", "#C5A880"],
+      colors: ["#1B365D", "#FFFFFF", "#4358bd"],
       colorLabels: "Prudential Navy · Heritage White · Gold Crest",
       telemetry: "Captained by Kapil Dev · 43-run historic triumph that altered world sport forever.",
       horologyNote: "Deep navy dial with pure white hour indices and a champagne-gold second hand.",
@@ -90,7 +90,7 @@ export default function StoryInfographics() {
       venue: "Wankhede Stadium, Mumbai",
       opponent: "Sri Lanka (277/4 vs 274/6)",
       headline: "The Night the Wait Finally Ended",
-      colors: ["#004B87", "#FF671F", "#D4AF37"],
+      colors: ["#004B87", "#FF671F", "#2c3d8f"],
       colorLabels: "Wankhede Royal Blue · Saffron Flame · World Champion Gold",
       telemetry: "MS Dhoni hits a massive 6 into the Mumbai night sky · 28 years of longing fulfilled.",
       horologyNote: "Midnight blue sunray dial crowned with flame-orange small-seconds and gold chapter ring.",
@@ -110,7 +110,7 @@ export default function StoryInfographics() {
       venue: "Home Soil Champions Arena",
       opponent: "The World Stage",
       headline: "The Night Victory Became Legacy",
-      colors: ["#081225", "#38BDF8", "#E6CA92"],
+      colors: ["#081225", "#38BDF8", "#7c6ad8"],
       colorLabels: "Obsidian Blue · Sky Cyan · Luminescent Platinum",
       telemetry: "The modern era of cricket supremacy · Precision, fearlessness and generational dominance.",
       horologyNote: "Dual-layer skeleton dial with diamond-cut steel hands and blue sapphire exhibition back.",
@@ -123,7 +123,7 @@ export default function StoryInfographics() {
   return (
     <div className="bg-ink text-chalk">
       {/* ─── INFOGRAPHIC 01: 01.09.1947 MERIDIAN & TIMEZONE UNIFICATION ─── */}
-      <section className="border-t border-white/10 bg-black/70 py-24 sm:py-32">
+      <section className="border-t border-black/10 bg-inkSoft py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
             {/* Left: Telemetry & Narrative */}
@@ -141,18 +141,18 @@ export default function StoryInfographics() {
               </p>
 
               {/* Meridian Coordinates & Telemetry */}
-              <div className="mt-8 grid grid-cols-2 gap-4 border-t border-white/10 pt-6 sm:grid-cols-3">
-                <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <div className="mt-8 grid grid-cols-2 gap-4 border-t border-black/10 pt-6 sm:grid-cols-3">
+                <div className="rounded-xl border border-black/10 bg-inkSoft p-4">
                   <span className="mono text-[10px] uppercase tracking-wider text-slate">Standard Meridian</span>
                   <span className="mono mt-1 block text-lg font-bold text-accent">82.5° E</span>
                   <span className="mono text-[10px] text-graphite">Mirzapur, UP</span>
                 </div>
-                <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                <div className="rounded-xl border border-black/10 bg-inkSoft p-4">
                   <span className="mono text-[10px] uppercase tracking-wider text-slate">Global Offset</span>
                   <span className="mono mt-1 block text-lg font-bold text-chalk">UTC +5:30</span>
                   <span className="mono text-[10px] text-graphite">Exact 5.5 Hrs Ahead</span>
                 </div>
-                <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4 col-span-2 sm:col-span-1">
+                <div className="rounded-xl border border-black/10 bg-inkSoft p-4 col-span-2 sm:col-span-1">
                   <span className="mono text-[10px] uppercase tracking-wider text-slate">Solar Span</span>
                   <span className="mono mt-1 block text-lg font-bold text-accent">116 Mins</span>
                   <span className="mono text-[10px] text-graphite">East-to-West Span</span>
@@ -162,15 +162,15 @@ export default function StoryInfographics() {
 
             {/* Right: Map & Meridian Visual Schematic */}
             <div className="lg:col-span-6">
-              <div className="elev relative aspect-square w-full overflow-hidden rounded-3xl border border-white/10 bg-[radial-gradient(ellipse_at_50%_50%,#1a1510,#080706_85%)] p-6 sm:p-8">
+              <div className="elev relative aspect-square w-full overflow-hidden rounded-3xl border border-black/10 bg-[radial-gradient(ellipse_at_50%_50%,#faf7f2,#ffffff_85%)] p-6 sm:p-8">
                 {/* SVG Meridian Map Infographic */}
                 <div className="relative flex h-full w-full items-center justify-center">
                   <svg viewBox="0 0 400 400" className="h-full w-full max-h-[380px] max-w-[380px]">
                     <defs>
                       <linearGradient id="meridianGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#d4af37" stopOpacity="0.2" />
-                        <stop offset="40%" stopColor="#d4af37" stopOpacity="1" />
-                        <stop offset="100%" stopColor="#d4af37" stopOpacity="0.2" />
+                        <stop offset="0%" stopColor="#2c3d8f" stopOpacity="0.2" />
+                        <stop offset="40%" stopColor="#2c3d8f" stopOpacity="1" />
+                        <stop offset="100%" stopColor="#2c3d8f" stopOpacity="0.2" />
                       </linearGradient>
                       <filter id="glow">
                         <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -206,8 +206,8 @@ export default function StoryInfographics() {
                          L 110 180 
                          L 130 130 
                          L 165 95 Z"
-                      fill="rgba(212,175,55,0.04)"
-                      stroke="rgba(212,175,55,0.25)"
+                      fill="rgba(44,61,143,0.04)"
+                      stroke="rgba(44,61,143,0.25)"
                       strokeWidth="1.5"
                     />
 
@@ -232,9 +232,9 @@ export default function StoryInfographics() {
                     />
 
                     {/* Mirzapur Shankargarh Fort Pin */}
-                    <circle cx="220" cy="175" r="7" fill="#d4af37" className="radar-pulse" />
+                    <circle cx="220" cy="175" r="7" fill="#2c3d8f" className="radar-pulse" />
                     <circle cx="220" cy="175" r="3" fill="#0c0b0a" />
-                    <text x="232" y="172" fill="#d4af37" fontSize="9" fontWeight="bold" fontFamily="var(--font-mono)">
+                    <text x="232" y="172" fill="#2c3d8f" fontSize="9" fontWeight="bold" fontFamily="var(--font-mono)">
                       MIRZAPUR (82°30'E)
                     </text>
                     <text x="232" y="184" fill="#fcfaf7" fontSize="7" fontFamily="var(--font-mono)">
@@ -248,17 +248,17 @@ export default function StoryInfographics() {
                     {/* Compass Rose */}
                     <g transform="translate(50, 60)">
                       <circle cx="0" cy="0" r="16" fill="none" stroke="rgba(255,255,255,0.15)" />
-                      <line x1="0" y1="-14" x2="0" y2="14" stroke="#d4af37" strokeWidth="1" />
-                      <line x1="-14" y1="0" x2="14" y2="0" stroke="#d4af37" strokeWidth="1" />
-                      <text x="0" y="-18" fill="#d4af37" fontSize="8" fontWeight="bold" textAnchor="middle">N</text>
+                      <line x1="0" y1="-14" x2="0" y2="14" stroke="#2c3d8f" strokeWidth="1" />
+                      <line x1="-14" y1="0" x2="14" y2="0" stroke="#2c3d8f" strokeWidth="1" />
+                      <text x="0" y="-18" fill="#2c3d8f" fontSize="8" fontWeight="bold" textAnchor="middle">N</text>
                     </g>
                   </svg>
                 </div>
 
                 {/* Subtitle tag */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-white/10 bg-black/80 px-4 py-2 backdrop-blur-md">
-                  <span className="mono text-xs text-graphite">Indian Standard Time Act</span>
-                  <span className="mono text-xs font-semibold text-accent">Established 01.09.1947</span>
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-black/10 bg-black/80 px-4 py-2 backdrop-blur-md">
+                  <span className="mono text-xs text-white/70">Indian Standard Time Act</span>
+                  <span className="mono text-xs font-semibold text-[#b9c8f2]">Established 01.09.1947</span>
                 </div>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function StoryInfographics() {
       </section>
 
       {/* ─── INFOGRAPHIC 02: KONARK SUNDIAL 24-SPOKE GEOMETRY (ARKA) ─── */}
-      <section className="border-t border-white/10 bg-ink py-24 sm:py-32">
+      <section className="border-t border-black/10 bg-ink py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
           <div className="text-center">
             <span className="eyebrow text-accent">Astronomical Horology</span>
@@ -283,13 +283,13 @@ export default function StoryInfographics() {
           <div className="mt-16 grid gap-10 lg:grid-cols-12 lg:items-center">
             {/* Left: Interactive 24-Spoke Sundial SVG */}
             <div className="lg:col-span-6">
-              <div className="elev relative aspect-square w-full overflow-hidden rounded-3xl border border-white/10 bg-[radial-gradient(circle_at_50%_50%,#18140f,#0a0807_85%)] p-6 sm:p-8">
+              <div className="elev relative aspect-square w-full overflow-hidden rounded-3xl border border-black/10 bg-[radial-gradient(circle_at_50%_50%,#faf6ef,#ffffff_85%)] p-6 sm:p-8">
                 <div className="relative flex h-full w-full items-center justify-center">
                   <svg viewBox="0 0 400 400" className="h-full w-full max-h-[380px] max-w-[380px]">
                     <defs>
                       <radialGradient id="sunWheelGlow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="#d4af37" stopOpacity="0.25" />
-                        <stop offset="70%" stopColor="#d4af37" stopOpacity="0.05" />
+                        <stop offset="0%" stopColor="#2c3d8f" stopOpacity="0.25" />
+                        <stop offset="70%" stopColor="#2c3d8f" stopOpacity="0.05" />
                         <stop offset="100%" stopColor="#000000" stopOpacity="0" />
                       </radialGradient>
                     </defs>
@@ -298,10 +298,10 @@ export default function StoryInfographics() {
                     <circle cx="200" cy="200" r="170" fill="url(#sunWheelGlow)" />
 
                     {/* Outer Wheel Rim with Carved Beads */}
-                    <circle cx="200" cy="200" r="160" fill="none" stroke="#d4af37" strokeWidth="3" />
+                    <circle cx="200" cy="200" r="160" fill="none" stroke="#2c3d8f" strokeWidth="3" />
                     <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1" strokeDasharray="3 4" />
-                    <circle cx="200" cy="200" r="60" fill="none" stroke="#d4af37" strokeWidth="2" />
-                    <circle cx="200" cy="200" r="28" fill="#14110d" stroke="#d4af37" strokeWidth="2" />
+                    <circle cx="200" cy="200" r="60" fill="none" stroke="#2c3d8f" strokeWidth="2" />
+                    <circle cx="200" cy="200" r="28" fill="#14110d" stroke="#2c3d8f" strokeWidth="2" />
 
                     {/* 24 Radial Spokes */}
                     {[...Array(24)].map((_, i) => {
@@ -319,7 +319,7 @@ export default function StoryInfographics() {
                             y1={y1}
                             x2={x2}
                             y2={y2}
-                            stroke={isMajor ? "#d4af37" : "rgba(212,175,55,0.4)"}
+                            stroke={isMajor ? "#2c3d8f" : "rgba(44,61,143,0.4)"}
                             strokeWidth={isMajor ? 2.5 : 1}
                           />
                           {isMajor && (
@@ -328,7 +328,7 @@ export default function StoryInfographics() {
                               cy={200 + 105 * Math.sin(angle)}
                               r="5"
                               fill="#14110d"
-                              stroke="#d4af37"
+                              stroke="#2c3d8f"
                               strokeWidth="1.5"
                             />
                           )}
@@ -370,7 +370,7 @@ export default function StoryInfographics() {
                     />
 
                     {/* Central Gnomon (Sun Axle) */}
-                    <circle cx="200" cy="200" r="14" fill="#d4af37" />
+                    <circle cx="200" cy="200" r="14" fill="#2c3d8f" />
                     <circle cx="200" cy="200" r="6" fill="#0c0b0a" />
 
                     {/* Center Label */}
@@ -380,8 +380,8 @@ export default function StoryInfographics() {
                   </svg>
                 </div>
 
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-white/10 bg-black/80 px-4 py-2.5 backdrop-blur-md">
-                  <span className="mono text-xs text-graphite">Shadow Coordinate</span>
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-black/10 bg-black/80 px-4 py-2.5 backdrop-blur-md">
+                  <span className="mono text-xs text-white/70">Shadow Coordinate</span>
                   <span className="mono text-xs font-semibold text-vermilionSoft">
                     Spoke #{currentPrahar.shadowSpoke} ({currentPrahar.sunAngle}°)
                   </span>
@@ -404,8 +404,8 @@ export default function StoryInfographics() {
                     onClick={() => setSelectedPrahar(idx)}
                     className={`rounded-xl border p-3.5 text-left transition-all duration-300 ${
                       selectedPrahar === idx
-                        ? "border-accent bg-accent/10 shadow-[0_0_20px_rgba(212,175,55,0.2)]"
-                        : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
+                        ? "border-accent bg-accent/10 shadow-[0_0_20px_rgba(44,61,143,0.2)]"
+                        : "border-black/10 bg-inkSoft hover:border-black/15 hover:bg-black/[0.04]"
                     }`}
                   >
                     <span className="mono block text-[10px] text-accent">Prahar {p.num}</span>
@@ -416,8 +416,8 @@ export default function StoryInfographics() {
               </div>
 
               {/* Selected Prahar Explanation */}
-              <div className="elev rounded-2xl border border-white/10 bg-inkCard p-6 sm:p-8">
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-4">
+              <div className="elev rounded-2xl border border-black/10 bg-inkCard p-6 sm:p-8">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-black/10 pb-4">
                   <div>
                     <span className="eyebrow text-accent">{currentPrahar.time}</span>
                     <h3 className="display mt-1 text-2xl text-chalk sm:text-3xl">{currentPrahar.name}</h3>
@@ -440,16 +440,16 @@ export default function StoryInfographics() {
                 </div>
 
                 {/* Ancient Indian Time Units Breakdown */}
-                <div className="mt-6 grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-center">
-                  <div className="rounded-lg bg-white/[0.02] p-2">
+                <div className="mt-6 grid grid-cols-3 gap-2 border-t border-black/10 pt-4 text-center">
+                  <div className="rounded-lg bg-inkSoft p-2">
                     <span className="mono text-[10px] text-slate block">1 Prahar</span>
                     <span className="mono text-xs font-bold text-chalk mt-0.5 block">3 Hours</span>
                   </div>
-                  <div className="rounded-lg bg-white/[0.02] p-2">
+                  <div className="rounded-lg bg-inkSoft p-2">
                     <span className="mono text-[10px] text-slate block">1 Ghatika</span>
                     <span className="mono text-xs font-bold text-chalk mt-0.5 block">24 Minutes</span>
                   </div>
-                  <div className="rounded-lg bg-white/[0.02] p-2">
+                  <div className="rounded-lg bg-inkSoft p-2">
                     <span className="mono text-[10px] text-slate block">1 Pal</span>
                     <span className="mono text-xs font-bold text-chalk mt-0.5 block">24 Seconds</span>
                   </div>
@@ -461,7 +461,7 @@ export default function StoryInfographics() {
       </section>
 
       {/* ─── INFOGRAPHIC 03: 1983–2026 CRICKET VICTORY DYNASTY LINEAGE ─── */}
-      <section className="border-t border-white/10 bg-black/80 py-24 sm:py-32">
+      <section className="border-t border-black/10 bg-inkSoft py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
           <div className="max-w-3xl">
             <span className="eyebrow text-accent">Vijay Collection Lineage</span>
@@ -482,7 +482,7 @@ export default function StoryInfographics() {
                 className={`group shrink-0 rounded-2xl border p-5 text-left transition-all duration-300 ${
                   activeVictory === idx
                     ? "border-accent bg-accent/10 min-w-[200px]"
-                    : "border-white/10 bg-white/[0.02] hover:border-white/20 min-w-[180px]"
+                    : "border-black/10 bg-inkSoft hover:border-black/15 min-w-[180px]"
                 }`}
               >
                 <div className="flex items-center justify-between">
@@ -499,11 +499,11 @@ export default function StoryInfographics() {
           </div>
 
           {/* Victory Detail Showcase Card */}
-          <div className="mt-8 elev rounded-3xl border border-white/10 bg-inkCard p-8 sm:p-10">
+          <div className="mt-8 elev rounded-3xl border border-black/10 bg-inkCard p-8 sm:p-10">
             <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
               <div className="lg:col-span-7">
                 <div className="flex items-center gap-3">
-                  <span className="mono rounded-full bg-accent px-3 py-1 text-xs font-bold text-black">{currentVictory.year}</span>
+                  <span className="mono rounded-full bg-accent px-3 py-1 text-xs font-bold text-white">{currentVictory.year}</span>
                   <span className="mono text-xs text-slate">{currentVictory.venue}</span>
                 </div>
 
@@ -515,25 +515,25 @@ export default function StoryInfographics() {
                   {currentVictory.telemetry}
                 </p>
 
-                <div className="mt-6 border-t border-white/10 pt-4">
+                <div className="mt-6 border-t border-black/10 pt-4">
                   <span className="mono text-[10px] uppercase tracking-wider text-accent">Match Scoreline</span>
                   <p className="font-mono text-sm font-semibold text-chalk mt-0.5">{currentVictory.opponent}</p>
                 </div>
               </div>
 
-              <div className="lg:col-span-5 rounded-2xl border border-white/10 bg-black/50 p-6">
+              <div className="lg:col-span-5 rounded-2xl border border-black/10 bg-inkSoft p-6">
                 <span className="eyebrow text-accent">Horological Translation</span>
                 <h4 className="display mt-2 text-xl text-chalk">Dial & Colorway Architecture</h4>
                 <p className="mt-3 font-sans text-xs leading-relaxed text-graphite">
                   {currentVictory.horologyNote}
                 </p>
 
-                <div className="mt-6 border-t border-white/10 pt-4">
+                <div className="mt-6 border-t border-black/10 pt-4">
                   <span className="mono text-[10px] uppercase tracking-wider text-slate">Jersey Palette Matrix</span>
                   <div className="mt-3 flex items-center gap-3">
                     {currentVictory.colors.map((c, i) => (
                       <div key={i} className="flex items-center gap-2">
-                        <span className="h-5 w-5 rounded-full border border-white/20 shadow-md" style={{ backgroundColor: c }} />
+                        <span className="h-5 w-5 rounded-full border border-black/15 shadow-md" style={{ backgroundColor: c }} />
                       </div>
                     ))}
                   </div>

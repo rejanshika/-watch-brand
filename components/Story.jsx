@@ -35,9 +35,9 @@ export default function Story() {
   );
 
   return (
-    <section id="story" ref={root} className="relative bg-ink text-chalk border-t border-white/10">
+    <section id="story" ref={root} className="relative bg-ink text-chalk border-t border-black/10">
       {/* Editorial intro */}
-      <div className="relative flex min-h-[48vh] w-full items-center overflow-hidden bg-[radial-gradient(circle_at_50%_35%,#131722,#07080b_80%)]">
+      <div className="relative flex min-h-[48vh] w-full items-center overflow-hidden bg-[radial-gradient(circle_at_50%_35%,#f2f4fa,#ffffff_80%)]">
         <div className="story-text relative z-10 mx-auto max-w-4xl px-6 py-24 text-center">
           <span className="eyebrow text-accent">{story.eyebrow}</span>
           <h2 className="display mt-4 text-4xl text-chalk sm:text-6xl lg:text-7xl">{story.title}</h2>
@@ -49,7 +49,7 @@ export default function Story() {
 
       {/* Vijay — five landmark nights */}
       <div className="mx-auto max-w-edge px-6 py-20 sm:px-10">
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-white/10 pb-5">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-black/10 pb-5">
           <div>
             <span className="eyebrow text-accent">Dynasty Lineage</span>
             <h3 className="display mt-1 text-3xl sm:text-4xl text-chalk">Five Landmark Victories</h3>
@@ -67,7 +67,7 @@ export default function Story() {
           {story.timeline.map((t) => (
             <article
               key={t.year}
-              className="story-card elev group w-[80vw] shrink-0 rounded-2xl border border-white/10 bg-inkCard p-6 transition-all duration-300 hover:border-accent/40 sm:w-[300px]"
+              className="story-card elev group w-[80vw] shrink-0 rounded-2xl border border-black/10 bg-inkCard p-6 transition-all duration-300 hover:border-accent/40 sm:w-[300px]"
             >
               <div className="mb-4 flex items-center justify-between">
                 <span className="display text-3xl text-chalk group-hover:text-accent transition-colors">{t.year}</span>

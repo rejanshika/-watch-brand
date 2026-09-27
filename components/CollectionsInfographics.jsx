@@ -210,7 +210,7 @@ export default function CollectionsInfographics() {
   return (
     <section className="bg-ink text-chalk">
       {/* ─── INFOGRAPHIC 01: MOVEMENT ARCHITECTURE & TELEMETRY ─── */}
-      <div className="border-t border-white/10 bg-black/60 py-24 sm:py-32">
+      <div className="border-t border-black/10 bg-inkSoft py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
           <div className="max-w-3xl">
             <span className="eyebrow text-accent">Interactive Calibre Anatomy</span>
@@ -226,15 +226,15 @@ export default function CollectionsInfographics() {
           <div className="mt-14 grid gap-8 lg:grid-cols-12 lg:items-center">
             {/* Left: Interactive Graphic & Technical Visualization */}
             <div className="lg:col-span-6">
-              <div className="elev relative aspect-square w-full overflow-hidden rounded-3xl border border-white/10 bg-[radial-gradient(ellipse_at_50%_50%,#151a28,#07080d_80%)] p-6 sm:p-8">
+              <div className="elev relative aspect-square w-full overflow-hidden rounded-3xl border border-black/10 bg-[radial-gradient(ellipse_at_50%_50%,#eff2f9,#ffffff_80%)] p-6 sm:p-8">
                 {/* SVG Horological Movement Vector Schematic */}
                 <div className="relative flex h-full w-full items-center justify-center">
                   <svg viewBox="0 0 400 400" className="h-full w-full max-h-[380px] max-w-[380px]">
                     <defs>
                       <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#f3d88e" />
-                        <stop offset="50%" stopColor="#dfb15b" />
-                        <stop offset="100%" stopColor="#8f721e" />
+                        <stop offset="0%" stopColor="#7c6ad8" />
+                        <stop offset="50%" stopColor="#2c3d8f" />
+                        <stop offset="100%" stopColor="#1d2a66" />
                       </linearGradient>
                       <radialGradient id="jewelGlow" cx="50%" cy="50%" r="50%">
                         <stop offset="0%" stopColor="#ff4d4d" stopOpacity="1" />
@@ -245,13 +245,13 @@ export default function CollectionsInfographics() {
 
                     {/* Outer Case & Calibre Ring */}
                     <circle cx="200" cy="200" r="185" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2" />
-                    <circle cx="200" cy="200" r="175" fill="none" stroke="#dfb15b" strokeWidth="1" strokeDasharray="4 8" className="spin-slow" />
+                    <circle cx="200" cy="200" r="175" fill="none" stroke="#2c3d8f" strokeWidth="1" strokeDasharray="4 8" className="spin-slow" />
 
                     {/* Main Baseplate Bridge Details */}
                     <path
                       d="M 60 200 C 60 120 120 60 200 60 C 260 60 310 95 330 145 L 250 200 L 220 280 Z"
                       fill="rgba(255,255,255,0.03)"
-                      stroke="rgba(223,177,91,0.3)"
+                      stroke="rgba(44,61,143,0.3)"
                       strokeWidth="1.5"
                     />
 
@@ -262,7 +262,7 @@ export default function CollectionsInfographics() {
                       }`}
                     >
                       <circle cx="270" cy="140" r="48" fill="#15120e" stroke="url(#goldGrad)" strokeWidth="2.5" />
-                      <circle cx="270" cy="140" r="38" fill="none" stroke="#dfb15b" strokeWidth="1" strokeDasharray="3 3" />
+                      <circle cx="270" cy="140" r="38" fill="none" stroke="#2c3d8f" strokeWidth="1" strokeDasharray="3 3" />
                       <circle cx="270" cy="140" r="10" fill="url(#goldGrad)" />
                       <text x="270" y="144" fill="#0c0b0a" fontSize="8" fontWeight="bold" textAnchor="middle">42H</text>
                     </g>
@@ -273,10 +273,10 @@ export default function CollectionsInfographics() {
                         activeComponent === 1 ? "opacity-100" : "opacity-40"
                       }`}
                     >
-                      <circle cx="130" cy="260" r="46" fill="none" stroke="#dfb15b" strokeWidth="2.5" />
-                      <line x1="130" y1="214" x2="130" y2="306" stroke="#dfb15b" strokeWidth="1.5" />
-                      <line x1="84" y1="260" x2="176" y2="260" stroke="#dfb15b" strokeWidth="1.5" />
-                      <circle cx="130" cy="260" r="28" fill="none" stroke="#e9cb79" strokeWidth="1" strokeDasharray="2 4" className="spin-sweep" />
+                      <circle cx="130" cy="260" r="46" fill="none" stroke="#2c3d8f" strokeWidth="2.5" />
+                      <line x1="130" y1="214" x2="130" y2="306" stroke="#2c3d8f" strokeWidth="1.5" />
+                      <line x1="84" y1="260" x2="176" y2="260" stroke="#2c3d8f" strokeWidth="1.5" />
+                      <circle cx="130" cy="260" r="28" fill="none" stroke="#7c6ad8" strokeWidth="1" strokeDasharray="2 4" className="spin-sweep" />
                       <circle cx="130" cy="260" r="14" fill="url(#jewelGlow)" stroke="#ff8585" strokeWidth="1" />
                     </g>
 
@@ -324,13 +324,13 @@ export default function CollectionsInfographics() {
                     >
                       <path
                         d="M 60 200 A 140 140 0 0 1 340 200 L 200 200 Z"
-                        fill="rgba(223,177,91,0.18)"
+                        fill="rgba(44,61,143,0.18)"
                         stroke="url(#goldGrad)"
                         strokeWidth="2"
                         className="spin-rev"
                       />
                       <circle cx="200" cy="200" r="22" fill="#14110d" stroke="url(#goldGrad)" strokeWidth="2" />
-                      <text x="200" y="196" fill="#dfb15b" fontSize="7" fontWeight="bold" textAnchor="middle" letterSpacing="1">
+                      <text x="200" y="196" fill="#2c3d8f" fontSize="7" fontWeight="bold" textAnchor="middle" letterSpacing="1">
                         IST 1947
                       </text>
                       <text x="200" y="206" fill="#ffffff" fontSize="5.5" textAnchor="middle" letterSpacing="1">
@@ -341,12 +341,12 @@ export default function CollectionsInfographics() {
                 </div>
 
                 {/* Live Telemetry Badge */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-white/10 bg-black/80 px-4 py-2.5 backdrop-blur-md">
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-black/10 bg-black/80 px-4 py-2.5 backdrop-blur-md">
                   <div className="flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-emerald-400 radar-pulse" />
-                    <span className="font-mono text-xs text-graphite uppercase tracking-wider">Calibre Miyota 82S7</span>
+                    <span className="font-mono text-xs text-white/70 uppercase tracking-wider">Calibre Miyota 82S7</span>
                   </div>
-                  <span className="font-mono text-xs font-semibold text-accent">{currentComp.metric}</span>
+                  <span className="font-mono text-xs font-semibold text-[#b9c8f2]">{currentComp.metric}</span>
                 </div>
               </div>
             </div>
@@ -360,8 +360,8 @@ export default function CollectionsInfographics() {
                     onClick={() => setActiveComponent(idx)}
                     className={`rounded-xl border p-3.5 text-left transition-all duration-300 ${
                       activeComponent === idx
-                        ? "border-accent bg-accent/10 shadow-[0_0_20px_rgba(223,177,91,0.2)]"
-                        : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
+                        ? "border-accent bg-accent/10 shadow-[0_0_20px_rgba(44,61,143,0.2)]"
+                        : "border-black/10 bg-inkSoft hover:border-black/15 hover:bg-black/[0.04]"
                     }`}
                   >
                     <span className="mono block text-[10px] uppercase tracking-wider text-slate">0{idx + 1}</span>
@@ -372,8 +372,8 @@ export default function CollectionsInfographics() {
               </div>
 
               {/* Active Component Detail Card */}
-              <div className="elev rounded-2xl border border-white/10 bg-inkCard p-6 sm:p-8">
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-4">
+              <div className="elev rounded-2xl border border-black/10 bg-inkCard p-6 sm:p-8">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-black/10 pb-4">
                   <div>
                     <span className="eyebrow text-accent">{currentComp.subhead}</span>
                     <h3 className="display mt-1 text-2xl text-chalk sm:text-3xl">{currentComp.name}</h3>
@@ -388,9 +388,9 @@ export default function CollectionsInfographics() {
                 </p>
 
                 {/* Subsystem Specifications Grid */}
-                <div className="mt-6 grid grid-cols-2 gap-3 border-t border-white/10 pt-4">
+                <div className="mt-6 grid grid-cols-2 gap-3 border-t border-black/10 pt-4">
                   {currentComp.specs.map((spec) => (
-                    <div key={spec.label} className="rounded-lg bg-white/[0.03] p-3">
+                    <div key={spec.label} className="rounded-lg bg-black/[0.03] p-3">
                       <span className="mono block text-[10px] uppercase tracking-wider text-slate">{spec.label}</span>
                       <span className="mt-1 block font-sans text-xs font-semibold text-chalk">{spec.val}</span>
                     </div>
@@ -403,7 +403,7 @@ export default function CollectionsInfographics() {
       </div>
 
       {/* ─── NEW INFOGRAPHIC: INTERACTIVE HYDROSTATIC DEPTH GAUGE (5 ATM vs 10 ATM) ─── */}
-      <div className="border-t border-white/10 bg-black/80 py-24 sm:py-32">
+      <div className="border-t border-black/10 bg-inkSoft py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
           <div className="max-w-3xl">
             <span className="eyebrow text-accent">Hydrostatic Pressure Simulation</span>
@@ -415,7 +415,7 @@ export default function CollectionsInfographics() {
             </p>
           </div>
 
-          <div className="mt-12 elev rounded-3xl border border-white/15 bg-inkCard p-8 sm:p-12">
+          <div className="mt-12 elev rounded-3xl border border-black/10 bg-inkCard p-8 sm:p-12">
             {/* Slider Control */}
             <div className="space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
@@ -430,7 +430,7 @@ export default function CollectionsInfographics() {
                 step={5}
                 value={depthMeters}
                 onChange={(e) => setDepthMeters(Number(e.target.value))}
-                className="h-2.5 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-accent"
+                className="h-2.5 w-full cursor-pointer appearance-none rounded-full bg-black/10 accent-accent"
               />
 
               <div className="flex justify-between text-[11px] font-mono text-slate pt-1">
@@ -441,20 +441,20 @@ export default function CollectionsInfographics() {
             </div>
 
             {/* Depth Telemetry Metrics */}
-            <div className="mt-10 grid gap-6 sm:grid-cols-3 border-t border-white/10 pt-8">
-              <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
+            <div className="mt-10 grid gap-6 sm:grid-cols-3 border-t border-black/10 pt-8">
+              <div className="rounded-2xl border border-black/5 bg-inkSoft p-5">
                 <span className="mono text-[10px] uppercase tracking-wider text-slate">Hydrostatic Pressure</span>
                 <h4 className="mono mt-2 text-3xl font-bold text-chalk">{barPressure} Bar</h4>
                 <p className="mt-1 font-sans text-xs text-graphite">Total dynamic water load on sapphire crystal</p>
               </div>
 
-              <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
+              <div className="rounded-2xl border border-black/5 bg-inkSoft p-5">
                 <span className="mono text-[10px] uppercase tracking-wider text-slate">Gasket Integrity</span>
                 <h4 className="mono mt-2 text-3xl font-bold text-emerald-400">100% Sealed</h4>
                 <p className="mt-1 font-sans text-xs text-graphite">Dual synthetic nitrile rubber crown barrier</p>
               </div>
 
-              <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
+              <div className="rounded-2xl border border-black/5 bg-inkSoft p-5">
                 <span className="mono text-[10px] uppercase tracking-wider text-slate">Collection Rating</span>
                 <h4 className="display mt-2 text-2xl font-bold text-accent">
                   {depthMeters <= 50 ? "5 ATM Rated" : "10 ATM Rated"}
@@ -473,7 +473,7 @@ export default function CollectionsInfographics() {
       </div>
 
       {/* ─── NEW INFOGRAPHIC: VANYA BIOME ELEVATION & TOPOGRAPHY ─── */}
-      <div className="border-t border-white/10 bg-ink py-24 sm:py-32">
+      <div className="border-t border-black/10 bg-ink py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
           <div className="text-center max-w-3xl mx-auto">
             <span className="eyebrow text-accent">Vanya Geographical Inspiration</span>
@@ -494,8 +494,8 @@ export default function CollectionsInfographics() {
                   onClick={() => setActiveBiome(idx)}
                   className={`w-full rounded-2xl border p-5 text-left transition-all duration-300 ${
                     activeBiome === idx
-                      ? "border-accent bg-accent/10 shadow-[0_0_20px_rgba(223,177,91,0.2)]"
-                      : "border-white/10 bg-white/[0.02] hover:border-white/20"
+                      ? "border-accent bg-accent/10 shadow-[0_0_20px_rgba(44,61,143,0.2)]"
+                      : "border-black/10 bg-inkSoft hover:border-black/15"
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -510,8 +510,8 @@ export default function CollectionsInfographics() {
 
             {/* Right: Detailed Biome Showcase */}
             <div className="lg:col-span-7">
-              <div className="elev rounded-3xl border border-white/15 bg-inkCard p-8 sm:p-10">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <div className="elev rounded-3xl border border-black/10 bg-inkCard p-8 sm:p-10">
+                <div className="flex items-center justify-between border-b border-black/10 pb-4">
                   <span className="eyebrow text-accent">{currentBiome.state} Sanctuary</span>
                   <span className="mono text-xs text-chalk font-semibold">{currentBiome.elevation}</span>
                 </div>
@@ -521,12 +521,12 @@ export default function CollectionsInfographics() {
                 </h3>
 
                 <div className="mt-6 space-y-4">
-                  <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
+                  <div className="rounded-xl border border-black/5 bg-inkSoft p-4">
                     <span className="mono text-[10px] uppercase tracking-wider text-slate block">Ecosystem & Habitat</span>
                     <p className="font-sans text-sm font-semibold text-chalk mt-0.5">{currentBiome.terrain}</p>
                   </div>
 
-                  <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
+                  <div className="rounded-xl border border-black/5 bg-inkSoft p-4">
                     <span className="mono text-[10px] uppercase tracking-wider text-slate block">Protected Wildlife Species</span>
                     <p className="font-sans text-sm font-semibold text-accent mt-0.5">{currentBiome.fauna}</p>
                   </div>
@@ -543,7 +543,7 @@ export default function CollectionsInfographics() {
       </div>
 
       {/* ─── INFOGRAPHIC 04: COLLECTION COMPARATIVE MATRIX ─── */}
-      <div className="border-t border-white/10 bg-black/80 py-24 sm:py-32">
+      <div className="border-t border-black/10 bg-inkSoft py-24 sm:py-32">
         <div className="mx-auto max-w-edge px-6 sm:px-10">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
@@ -559,8 +559,8 @@ export default function CollectionsInfographics() {
                   onClick={() => setSelectedCollection(tab)}
                   className={`rounded-full px-4 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors ${
                     selectedCollection === tab
-                      ? "bg-accent text-black font-semibold"
-                      : "border border-white/10 bg-white/5 text-graphite hover:text-chalk"
+                      ? "bg-accent text-white font-semibold"
+                      : "border border-black/10 bg-inkSoft text-graphite hover:text-chalk"
                   }`}
                 >
                   {tab === "all" ? "All Collections" : tab}
@@ -578,12 +578,12 @@ export default function CollectionsInfographics() {
                   key={col.name}
                   className={`elev flex flex-col justify-between rounded-3xl border p-8 transition-all duration-300 ${
                     col.name === "Vijay"
-                      ? "border-accent/40 bg-[radial-gradient(ellipse_at_top,#1f2436,#0a0c14)]"
-                      : "border-white/10 bg-inkCard"
+                      ? "border-accent/40 bg-[radial-gradient(ellipse_at_top,#f1f3f9,#ffffff)]"
+                      : "border-black/10 bg-inkCard"
                   }`}
                 >
                   <div>
-                    <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <div className="flex items-center justify-between border-b border-black/10 pb-4">
                       <div>
                         <span className="eyebrow text-accent">{col.variants}</span>
                         <h3 className="display text-3xl text-chalk">{col.name}</h3>
@@ -600,30 +600,30 @@ export default function CollectionsInfographics() {
 
                     {/* Spec List */}
                     <div className="mt-6 space-y-3">
-                      <div className="rounded-xl bg-white/[0.02] p-3">
+                      <div className="rounded-xl bg-inkSoft p-3">
                         <span className="mono block text-[10px] uppercase tracking-wider text-slate">Case Architecture</span>
                         <span className="mt-0.5 block font-sans text-xs font-semibold text-chalk">{col.dimensions}</span>
                       </div>
-                      <div className="rounded-xl bg-white/[0.02] p-3">
+                      <div className="rounded-xl bg-inkSoft p-3">
                         <span className="mono block text-[10px] uppercase tracking-wider text-slate">Dial Artistry</span>
                         <span className="mt-0.5 block font-sans text-xs font-semibold text-chalk">{col.dialFinish}</span>
                       </div>
-                      <div className="rounded-xl bg-white/[0.02] p-3">
+                      <div className="rounded-xl bg-inkSoft p-3">
                         <span className="mono block text-[10px] uppercase tracking-wider text-slate">Water Resistance</span>
                         <span className="mt-0.5 block font-sans text-xs font-semibold text-accent">{col.waterproof}</span>
                       </div>
-                      <div className="rounded-xl bg-white/[0.02] p-3">
+                      <div className="rounded-xl bg-inkSoft p-3">
                         <span className="mono block text-[10px] uppercase tracking-wider text-slate">Horological Calibre</span>
                         <span className="mt-0.5 block font-sans text-xs font-semibold text-chalk">{col.movement}</span>
                       </div>
-                      <div className="rounded-xl bg-white/[0.02] p-3">
+                      <div className="rounded-xl bg-inkSoft p-3">
                         <span className="mono block text-[10px] uppercase tracking-wider text-slate">Strap Execution</span>
                         <span className="mt-0.5 block font-sans text-xs font-semibold text-chalk">{col.strap}</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-8 border-t border-white/10 pt-4 flex items-center justify-between">
+                  <div className="mt-8 border-t border-black/10 pt-4 flex items-center justify-between">
                     <span className="mono text-xs text-slate">Allocation Scarcity</span>
                     <span className="mono text-xs font-semibold text-accent">{col.scarcity}</span>
                   </div>

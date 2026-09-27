@@ -6,13 +6,13 @@ export default function Motif({ variant = "sun", className = "" }) {
       <svg viewBox="0 0 400 400" className={className} fill="none" aria-hidden="true">
         <defs>
           <linearGradient id="rg-gold" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#f0dcae" />
-            <stop offset="0.5" stopColor="#c9a15c" />
-            <stop offset="1" stopColor="#7c5c28" />
+            <stop offset="0" stopColor="#9c8fe4" />
+            <stop offset="0.5" stopColor="#4358bd" />
+            <stop offset="1" stopColor="#1d2a66" />
           </linearGradient>
           <radialGradient id="rg-sweep" cx="0.5" cy="0.5" r="0.5">
-            <stop offset="0" stopColor="#e6cd96" stopOpacity="0.55" />
-            <stop offset="1" stopColor="#e6cd96" stopOpacity="0" />
+            <stop offset="0" stopColor="#7c6ad8" stopOpacity="0.55" />
+            <stop offset="1" stopColor="#7c6ad8" stopOpacity="0" />
           </radialGradient>
         </defs>
 
@@ -54,9 +54,9 @@ export default function Motif({ variant = "sun", className = "" }) {
         })}
 
         {/* blips */}
-        <circle cx="286" cy="150" r="3.5" fill="#e6cd96" />
-        <circle cx="132" cy="250" r="2.5" fill="#e6cd96" fillOpacity="0.7" />
-        <circle cx="238" cy="286" r="2.5" fill="#e6cd96" fillOpacity="0.6" />
+        <circle cx="286" cy="150" r="3.5" fill="#7c6ad8" />
+        <circle cx="132" cy="250" r="2.5" fill="#7c6ad8" fillOpacity="0.7" />
+        <circle cx="238" cy="286" r="2.5" fill="#7c6ad8" fillOpacity="0.6" />
 
         <line x1="200" y1="8" x2="200" y2="392" stroke="url(#rg-gold)" strokeWidth="0.5" strokeOpacity="0.25" />
         <line x1="8" y1="200" x2="392" y2="200" stroke="url(#rg-gold)" strokeWidth="0.5" strokeOpacity="0.25" />
@@ -70,13 +70,13 @@ export default function Motif({ variant = "sun", className = "" }) {
     <svg viewBox="0 0 400 400" className={className} fill="none" aria-hidden="true">
       <defs>
         <linearGradient id="sn-gold" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#f2dfb2" />
-          <stop offset="0.5" stopColor="#c9a15c" />
-          <stop offset="1" stopColor="#7c5c28" />
+          <stop offset="0" stopColor="#9c8fe4" />
+          <stop offset="0.5" stopColor="#4358bd" />
+          <stop offset="1" stopColor="#1d2a66" />
         </linearGradient>
         <radialGradient id="sn-core" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="0" stopColor="#f2dfb2" />
-          <stop offset="1" stopColor="#b98f4a" />
+          <stop offset="0" stopColor="#9c8fe4" />
+          <stop offset="1" stopColor="#4358bd" />
         </radialGradient>
       </defs>
 

@@ -7,31 +7,34 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Deep Midnight Obsidian & Celestial Onyx surfaces
-        ink: "#07080b",
-        inkSoft: "#0e1017",
-        inkCard: "#131620",
-        black: "#040507",
-        
-        // Pure Silk Ivory & Crisp Alabaster light panels
+        // Bright, paper-white surfaces (mirrors ist1947.com)
+        ink: "#ffffff",        // page background
+        inkSoft: "#f7f6f3",    // warm off-white alternating band
+        inkCard: "#ffffff",    // card surface
+        black: "#111111",      // true dark — footer & dark blocks only
+
         concrete: "#f4f6f9",
         paper: "#ffffff",
-        
-        // High-contrast, razor-sharp text colors
-        chalk: "#ffffff",
-        chalkSoft: "#f1f5f9",
-        graphite: "#cbd5e1",
-        slate: "#94a3b8",
-        
-        // Luminous Imperial Gold & Royal Azure accents
-        accent: "#dfb15b",
-        accentSoft: "#f3c77c",
-        accentMuted: "#b88c3a",
-        azure: "#3b82f6",
-        azureGlow: "#60a5fa",
-        indigo: "#1e293b",
-        vermilion: "#ef4444",
-        emerald: "#10b981",
+
+        // Ink-on-paper text ramp
+        chalk: "#000000",      // primary text
+        chalkSoft: "#1c1c1c",
+        graphite: "#4a4a4a",   // body copy
+        slate: "#7a7a7a",      // captions / meta
+
+        // Brand accents — bright, drawn from the collections
+        accent: "#2c3d8f",     // Arka dial indigo (primary accent)
+        accentSoft: "#4358bd",
+        accentMuted: "#1d2a66",
+        arka: "#7c6ad8",       // Arka sunset lavender
+        arkaWarm: "#c2643a",   // Konark copper
+        vanya: "#1f7a52",      // Vanya wild green
+        vijay: "#1878d4",      // Vijay bright blue
+        azure: "#1878d4",
+        azureGlow: "#4ea3f0",
+        indigo: "#1d2a66",
+        vermilion: "#e0452f",
+        emerald: "#1f7a52",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "-apple-system", "sans-serif"],

@@ -2,8 +2,8 @@ import Motif from "./Motif";
 
 export default function PageHeader({ eyebrow, title, intro, motif, artLabel }) {
   return (
-    <header className="relative overflow-hidden bg-black text-chalk">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_75%_35%,#131a2c,#050608_70%)]" />
+    <header className="relative overflow-hidden bg-ink text-chalk">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_75%_35%,#eef1f9,#ffffff_70%)]" />
 
       <div
         className={`relative mx-auto max-w-edge px-6 pb-20 pt-36 sm:px-10 sm:pt-44 ${
@@ -23,7 +23,7 @@ export default function PageHeader({ eyebrow, title, intro, motif, artLabel }) {
         {motif && (
           <div className="floaty relative mx-auto aspect-square w-full max-w-[400px]">
             {/* framed artwork card */}
-            <div className="elev absolute inset-0 overflow-hidden rounded-[2.5rem] border border-white/15 bg-[radial-gradient(circle_at_50%_45%,#182033,#07090f_80%)]">
+            <div className="elev absolute inset-0 overflow-hidden rounded-[2.5rem] border border-black/10 bg-[radial-gradient(circle_at_50%_45%,#eef2fa,#ffffff_80%)]">
               {/* glow */}
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-3/4 w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20 blur-3xl" />
               <Motif

@@ -11,7 +11,7 @@ export default function Marquee() {
   // duplicated once so the -50% translate loops seamlessly
   const run = [...WORDS, ...WORDS];
   return (
-    <div className="marquee overflow-hidden border-y border-white/10 bg-black py-6">
+    <div className="marquee overflow-hidden border-y border-black/10 bg-inkSoft py-6">
       <div className="marquee-track">
         {run.map((w, i) => (
           <span key={i} className="flex items-center">

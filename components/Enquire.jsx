@@ -27,7 +27,7 @@ export default function Enquire() {
   };
 
   return (
-    <section id="enquire" className="bg-black text-chalk border-t border-white/10">
+    <section id="enquire" className="bg-ink text-chalk border-t border-black/10">
       <div className="mx-auto max-w-3xl px-6 py-24 sm:px-10 md:py-32">
         <span className="eyebrow text-accent">{enquire.eyebrow}</span>
         <h2 className="display mt-3 text-4xl sm:text-6xl text-chalk">
@@ -57,14 +57,14 @@ export default function Enquire() {
                   >
                     <span
                       className={`flex h-7 w-7 items-center justify-center rounded-full border text-xs font-mono font-bold transition-all ${
-                        i <= step ? "border-accent bg-accent text-black shadow-[0_0_15px_rgba(223,177,91,0.4)]" : "border-white/20 bg-white/5"
+                        i <= step ? "border-accent bg-accent text-white shadow-[0_0_15px_rgba(44,61,143,0.4)]" : "border-black/15 bg-inkSoft"
                       }`}
                     >
                       {i + 1}
                     </span>
                     <span className="hidden sm:inline font-mono">{s.name}</span>
                   </button>
-                  {i < enquire.steps.length - 1 && <span className="h-px flex-1 bg-white/10" />}
+                  {i < enquire.steps.length - 1 && <span className="h-px flex-1 bg-black/10" />}
                 </div>
               ))}
             </div>
@@ -85,7 +85,7 @@ export default function Enquire() {
                     value={data[f.name] || ""}
                     placeholder={f.placeholder}
                     onChange={(e) => update(f.name, e.target.value)}
-                    className="w-full border-b border-white/20 bg-transparent py-3 font-sans text-base text-chalk placeholder:text-slate/60 focus:border-accent focus:outline-none transition-colors"
+                    className="w-full border-b border-black/15 bg-transparent py-3 font-sans text-base text-chalk placeholder:text-slate/60 focus:border-accent focus:outline-none transition-colors"
                   />
                 </label>
               ))}
@@ -106,7 +106,7 @@ export default function Enquire() {
                 type="button"
                 onClick={next}
                 disabled={!canAdvance}
-                className="elev group ml-auto flex w-full items-center justify-between rounded-2xl border border-white/15 bg-inkCard px-8 py-5 text-left transition-all duration-300 hover:border-accent hover:bg-accent hover:text-black disabled:cursor-not-allowed disabled:opacity-40 sm:w-auto sm:min-w-[280px]"
+                className="elev group ml-auto flex w-full items-center justify-between rounded-2xl border border-black/10 bg-inkCard px-8 py-5 text-left transition-all duration-300 hover:border-accent hover:bg-accent hover:text-black disabled:cursor-not-allowed disabled:opacity-40 sm:w-auto sm:min-w-[280px]"
               >
                 <span className="display text-2xl font-bold">{isLast ? "Confirm Registration" : "Continue"}</span>
                 <span className="text-xl text-accent transition-transform group-hover:translate-x-1.5 group-hover:text-black">→</span>

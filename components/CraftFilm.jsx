@@ -33,7 +33,7 @@ export default function CraftFilm() {
   );
 
   return (
-    <section className="relative overflow-hidden bg-black text-chalk border-t border-white/10">
+    <section className="relative overflow-hidden bg-ink text-chalk border-t border-black/10">
       <div className="pointer-events-none absolute right-0 top-1/2 h-[50vh] w-[50vh] -translate-y-1/2 rounded-full bg-accent/10 blur-[140px]" />
       <div className="relative mx-auto grid max-w-edge items-center gap-12 px-6 py-24 sm:px-10 md:py-32 lg:grid-cols-2 lg:gap-20">
         {/* copy */}
@@ -53,7 +53,7 @@ export default function CraftFilm() {
 
         {/* film */}
         <div className="cf-media">
-          <div className="floaty elev overflow-hidden rounded-[2.5rem] border border-white/15 bg-inkCard">
+          <div className="floaty elev overflow-hidden rounded-[2.5rem] border border-black/10 bg-inkCard">
             <LazyVideo
               src="/IST1947_watch_film_1.mp4"
               poster="/frames/frame_120.jpg"

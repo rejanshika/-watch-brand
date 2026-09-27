@@ -26,18 +26,18 @@ export default function Difference() {
   );
 
   return (
-    <section ref={root} className="bg-black text-chalk">
+    <section ref={root} className="bg-ink text-chalk">
       <div className="mx-auto max-w-edge px-6 py-24 sm:px-10 md:py-28">
         <div className="mb-14">
           <p className="eyebrow text-accent">{difference.eyebrow}</p>
           <h2 className="display mt-3 text-5xl sm:text-6xl">{difference.title}</h2>
         </div>
 
-        <div className="grid gap-px overflow-hidden rounded-2xl bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-px overflow-hidden rounded-2xl bg-black/10 sm:grid-cols-2 lg:grid-cols-4">
           {difference.items.map((it) => (
             <div
               key={it.n}
-              className="diff-item group relative overflow-hidden bg-ink p-8 transition-colors duration-300 hover:bg-white/[0.03]"
+              className="diff-item group relative overflow-hidden bg-ink p-8 transition-colors duration-300 hover:bg-black/[0.03]"
             >
               {/* accent line grows on hover */}
               <span className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-accent transition-transform duration-500 group-hover:scale-x-100" />

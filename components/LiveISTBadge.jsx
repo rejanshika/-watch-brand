@@ -52,13 +52,13 @@ export default function LiveISTBadge({ compact = false }) {
 
   if (compact) {
     return (
-      <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-3 py-1 font-mono text-[11px] text-chalk backdrop-blur-md">
+      <div className="flex items-center gap-2 rounded-full border border-black/10 bg-inkSoft px-3 py-1 font-mono text-[11px] text-chalk">
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
         </span>
         <span className="font-semibold text-accent">{time || "00:00:00 IST"}</span>
-        <span className="hidden text-[9px] uppercase tracking-wider text-slate sm:inline">
+        <span className="hidden text-[9px] uppercase tracking-wider text-graphite sm:inline">
           UTC+5:30
         </span>
       </div>
@@ -66,16 +66,16 @@ export default function LiveISTBadge({ compact = false }) {
   }
 
   return (
-    <div className="elev flex items-center justify-between gap-4 rounded-2xl border border-white/15 bg-inkCard/90 p-4 backdrop-blur-md">
+    <div className="elev flex items-center justify-between gap-4 rounded-2xl border border-black/10 bg-inkSoft p-4">
       <div className="flex items-center gap-3">
         {/* Animated Ashoka 24-Spoke Wheel Ticking */}
-        <div className="relative flex h-9 w-9 items-center justify-center rounded-full border border-accent/40 bg-black/80">
+        <div className="relative flex h-9 w-9 items-center justify-center rounded-full border border-accent/30 bg-white">
           <svg
             viewBox="0 0 40 40"
             className="h-7 w-7"
             style={{ transform: `rotate(${secondsAngle}deg)` }}
           >
-            <circle cx="20" cy="20" r="18" fill="none" stroke="rgba(223,177,91,0.2)" strokeWidth="1" />
+            <circle cx="20" cy="20" r="18" fill="none" stroke="rgba(44,61,143,0.25)" strokeWidth="1" />
             {[...Array(24)].map((_, i) => (
               <line
                 key={i}
@@ -83,11 +83,11 @@ export default function LiveISTBadge({ compact = false }) {
                 y1="20"
                 x2={20 + 16 * Math.cos((i * 15 * Math.PI) / 180)}
                 y2={20 + 16 * Math.sin((i * 15 * Math.PI) / 180)}
-                stroke="#dfb15b"
+                stroke="#2c3d8f"
                 strokeWidth={i % 3 === 0 ? "1.5" : "0.75"}
               />
             ))}
-            <circle cx="20" cy="20" r="3" fill="#dfb15b" />
+            <circle cx="20" cy="20" r="3" fill="#2c3d8f" />
           </svg>
         </div>
 
@@ -104,8 +104,8 @@ export default function LiveISTBadge({ compact = false }) {
         </div>
       </div>
 
-      <span className="hidden font-mono text-[10px] uppercase tracking-widest text-emerald-400 md:inline-flex items-center gap-1.5">
-        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 radar-pulse" />
+      <span className="hidden font-mono text-[10px] uppercase tracking-widest text-vanya md:inline-flex items-center gap-1.5">
+        <span className="h-1.5 w-1.5 rounded-full bg-vanya radar-pulse" />
         Live Calibre Sweep
       </span>
     </div>

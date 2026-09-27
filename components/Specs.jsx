@@ -26,7 +26,7 @@ export default function Specs() {
   );
 
   return (
-    <section id="specs" ref={root} className="bg-black text-chalk border-t border-white/10">
+    <section id="specs" ref={root} className="bg-ink text-chalk border-t border-black/10">
       <div className="mx-auto max-w-edge px-6 py-24 sm:px-10 md:py-32">
         <div className="mb-14">
           <span className="eyebrow text-accent">Technical Specifications</span>
@@ -37,13 +37,13 @@ export default function Specs() {
 
         <div className="grid gap-8 md:grid-cols-3">
           {specs.map((col, i) => (
-            <div key={col.name} className="spec-col elev rounded-3xl border border-white/10 bg-inkCard p-6">
-              <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-4">
+            <div key={col.name} className="spec-col elev rounded-3xl border border-black/10 bg-inkCard p-6">
+              <div className="mb-4 flex items-center justify-between border-b border-black/10 pb-4">
                 <h3 className="display text-2xl text-chalk">{col.name}</h3>
                 <span className="mono text-xs uppercase tracking-widest text-accent">0{i + 1}</span>
               </div>
 
-              <dl className="mb-6 divide-y divide-white/10">
+              <dl className="mb-6 divide-y divide-black/10">
                 {col.rows.map(([k, v]) => (
                   <div key={k} className="flex items-center justify-between py-3 font-sans text-sm">
                     <dt className="text-slate">{k}</dt>
@@ -53,7 +53,7 @@ export default function Specs() {
               </dl>
 
               <div
-                className="floaty elev relative aspect-square w-full overflow-hidden rounded-2xl bg-black border border-white/10"
+                className="floaty elev relative aspect-square w-full overflow-hidden rounded-2xl bg-inkSoft border border-black/10"
                 style={{ animationDelay: `${i * -2.1}s` }}
               >
                 <img

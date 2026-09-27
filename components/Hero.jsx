@@ -78,33 +78,33 @@ export default function Hero() {
     <section
       id="top"
       ref={root}
-      className="relative flex h-[100svh] min-h-[660px] w-full items-center justify-center overflow-hidden bg-black"
+      className="relative flex h-[100svh] min-h-[660px] w-full items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#cfd0ee_0%,#e4d7ea_38%,#f6dfd0_68%,#fdf3e7_100%)]"
     >
-      {/* full-bleed cinematic watch backdrop */}
+      {/* the Arka sunset plate, full bleed and bright */}
       <div className="hero-parallax pointer-events-none absolute inset-0 scale-105">
         <img
           src={hero.image}
-          alt="IST 1947 timepiece"
+          alt="The IST 1947 Arka collection against a Konark sunset"
           className="hero-watch absolute inset-0 h-full w-full object-cover"
         />
       </div>
-      {/* legibility scrims */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_46%,rgba(0,0,0,0.82),transparent_75%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/90" />
-      <div className="hero-glow pointer-events-none absolute left-1/2 top-[46%] h-[46vh] w-[70vh] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20 blur-[130px]" />
+      {/* legibility scrims — light, so the page stays bright */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_44%,rgba(255,255,255,0.86),rgba(255,255,255,0.35)_55%,transparent_78%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/85 via-white/15 to-white/90" />
+      <div className="hero-glow pointer-events-none absolute left-1/2 top-[46%] h-[46vh] w-[70vh] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/50 blur-[130px]" />
 
       {/* copy — single centered block */}
       <div className="hero-copy relative z-10 flex flex-col items-center px-6 text-center">
-        <p className="hero-eyebrow eyebrow mb-5 text-accent tracking-[0.28em]">
+        <p className="hero-eyebrow eyebrow mb-5 text-accentMuted tracking-[0.28em]">
           Advanced Horology · Made in India
         </p>
         <h1
-          className="hero-title display text-[17vw] leading-none text-chalk sm:text-[13vw] lg:text-[10vw]"
+          className="hero-title display text-[17vw] leading-none text-[#3d1f14] sm:text-[13vw] lg:text-[10vw]"
           style={{ perspective: "600px" }}
         >
           {hero.headline}
         </h1>
-        <p className="hero-tag mt-6 max-w-md font-sans text-base leading-relaxed text-graphite sm:text-lg">
+        <p className="hero-tag mt-6 max-w-md font-sans text-base leading-relaxed text-[#5a3a2c] sm:text-lg">
           {hero.tagline}
         </p>
       </div>
@@ -115,8 +115,8 @@ export default function Hero() {
         className="hero-scroll absolute bottom-24 left-1/2 z-10 -translate-x-1/2"
         aria-label="Scroll to explore"
       >
-        <span className="group flex h-12 w-12 items-center justify-center rounded-full border border-accent/60 bg-black/40 backdrop-blur-md transition-all hover:bg-accent hover:border-accent">
-          <span className="animate-bounce text-accent transition-colors group-hover:text-black">
+        <span className="group flex h-12 w-12 items-center justify-center rounded-full border border-accent/50 bg-white/70 backdrop-blur-md transition-all hover:bg-accent hover:border-accent">
+          <span className="animate-bounce text-accent transition-colors group-hover:text-white">
             ↓
           </span>
         </span>
@@ -124,13 +124,13 @@ export default function Hero() {
 
       {/* corner labels */}
       <div className="pointer-events-none absolute inset-x-0 bottom-6 z-10 flex justify-between px-6 sm:px-10">
-        <span className="hero-corner eyebrow rounded-full border border-white/15 bg-black/50 px-3.5 py-1.5 text-graphite backdrop-blur-sm">
+        <span className="hero-corner eyebrow rounded-full border border-black/10 bg-white/70 px-3.5 py-1.5 text-chalkSoft backdrop-blur-sm">
           {hero.corners[0]}
         </span>
-        <span className="hero-corner eyebrow hidden rounded-full border border-white/15 bg-black/50 px-3.5 py-1.5 text-graphite backdrop-blur-sm sm:block">
+        <span className="hero-corner eyebrow hidden rounded-full border border-black/10 bg-white/70 px-3.5 py-1.5 text-chalkSoft backdrop-blur-sm sm:block">
           {hero.corners[1]}
         </span>
-        <span className="hero-corner eyebrow rounded-full border border-white/15 bg-black/50 px-3.5 py-1.5 text-graphite backdrop-blur-sm">
+        <span className="hero-corner eyebrow rounded-full border border-black/10 bg-white/70 px-3.5 py-1.5 text-chalkSoft backdrop-blur-sm">
           {hero.corners[2]}
         </span>
       </div>

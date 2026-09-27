@@ -110,7 +110,7 @@ export default function Collections() {
                 <a
                   href="/collections"
                   className={`mt-8 inline-flex items-center gap-2 border-b pb-1 font-mono text-sm uppercase tracking-[0.16em] transition-colors ${
-                    dark ? "border-white/20 text-chalk hover:border-accent" : "border-black/20 text-black hover:border-accent"
+                    dark ? "border-black/15 text-chalk hover:border-accent" : "border-black/20 text-black hover:border-accent"
                   }`}
                 >
                   Explore {c.name} <span className="text-accent">→</span>
