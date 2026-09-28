@@ -97,19 +97,12 @@ html.lenis body {
   scrollbar-width: none;
 }
 
-/* Floating-in-air: gentle bob + deep soft shadow (levitation) */
-@keyframes floaty {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
+/* Luxury card elevation & hover transition */
 .floaty {
-  animation: floaty 6s ease-in-out infinite;
-  will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.floaty:hover {
+  transform: translateY(-4px);
 }
 
 .elev {
